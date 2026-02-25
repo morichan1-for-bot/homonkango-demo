@@ -2,740 +2,1639 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
 <title>訪問看護ステーション もりのたね | 岡山市南区</title>
-<meta name="description" content="岡山市南区の訪問看護ステーション「もりのたね」。利用者さまにとって最良のケアを。365日24時間対応。TEL: 086-259-5850">
+<meta name="description" content="岡山市南区の訪問看護ステーション「もりのたね」。利用者さまにとって最良のケアを。やさしさと誠実さで365日24時間対応。TEL: 086-259-5850">
+<meta property="og:title" content="訪問看護ステーション もりのたね | 岡山市南区">
+<meta property="og:description" content="利用者さまにとって最良のケアを。スタッフにとって最良の環境を。やさしさと誠実さで、社会に貢献します。">
+<meta property="og:site_name" content="もりのたね">
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
 <style>
-/* ── Reset & Base ── */
+/* ─────────────────────────────
+   Reset & Variables
+───────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --green:      #4d8c62;
-  --green-l:    #6aab7e;
-  --green-d:    #2e5c3e;
-  --green-pale: #eaf4ee;
-  --green-pale2:#f0f7f2;
-  --brown:      #8c6d4d;
-  --beige:      #f7f3ec;
-  --beige-d:    #ede7d9;
+  --green:      #5c8a6e;
+  --green-l:    #7aab8e;
+  --green-d:    #3a5c48;
+  --green-pale: #eef5f1;
+  --green-pale2:#f3f8f5;
   --cream:      #fdfaf5;
+  --beige:      #f5f0e8;
+  --beige-d:    #ede6d6;
+  --brown:      #8c7050;
   --text:       #2a2a2a;
   --text-s:     #6b6b6b;
   --white:      #ffffff;
-  --shadow-s:   0 2px 12px rgba(0,0,0,.07);
-  --shadow-m:   0 4px 24px rgba(0,0,0,.10);
-  --shadow-l:   0 8px 40px rgba(0,0,0,.12);
+  --header-h:   70px;
+  --r-card:     16px;
   --r-btn:      30px;
-  --r-card:     18px;
-  --r-img:      14px;
+  --shadow-s:   0 2px 12px rgba(0,0,0,.06);
+  --shadow-m:   0 4px 24px rgba(0,0,0,.09);
+  --shadow-l:   0 8px 40px rgba(0,0,0,.12);
 }
+
 html { scroll-behavior: smooth; }
+
 body {
-  font-family: 'Zen Maru Gothic', arial, sans-serif;
+  font-family: 'Zen Maru Gothic', sans-serif;
   background: var(--cream);
   color: var(--text);
-  line-height: 1.85;
-  font-weight: 400;
+  line-height: 1.9;
+  font-size: 15px;
 }
-a { color: inherit; text-decoration: none; }
-img { display: block; width: 100%; }
 
-/* ── Utilities ── */
-.inner { max-width: 1080px; margin: 0 auto; padding: 0 5%; }
-.tag {
-  display: inline-block;
-  font-family: 'Poppins', sans-serif;
-  font-size: .72rem;
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--green);
-  background: var(--green-pale);
-  padding: 4px 14px;
-  border-radius: 20px;
-  margin-bottom: 10px;
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 5%;
 }
-.sec-title {
-  font-size: clamp(1.5rem, 2.8vw, 2rem);
+
+/* ─────────────────────────────
+   Section Heading (English + JP)
+   Exactly like sumikkocare.jp
+───────────────────────────── */
+.sec-ttl {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.sec-ttl .en {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  letter-spacing: .08em;
+  color: var(--green);
+  line-height: 1.1;
+  display: block;
+}
+.sec-ttl .ja {
+  display: block;
+  font-size: .9rem;
+  color: var(--text-s);
+  margin-top: 6px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ─────────────────────────────
+   Button (border style like sumikkocare)
+───────────────────────────── */
+.btn-wrap {
+  text-align: center;
+  margin-top: 40px;
+}
+.btn-border {
+  display: inline-block;
+  border: 1.5px solid var(--green);
+  color: var(--green);
+  padding: 13px 48px;
+  border-radius: var(--r-btn);
+  font-size: .9rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  transition: background .25s, color .25s;
+}
+.btn-border:hover {
+  background: var(--green);
+  color: #fff;
+}
+.btn-border.white {
+  border-color: #fff;
+  color: #fff;
+}
+.btn-border.white:hover {
+  background: #fff;
+  color: var(--green);
+}
+
+/* ─────────────────────────────
+   HEADER
+───────────────────────────── */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-h);
+  background: rgba(253,250,245,.97);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-s);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Logo */
+.header-logo {
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--green-d);
-  line-height: 1.5;
-  margin-bottom: 14px;
+  line-height: 1.25;
+  flex-shrink: 0;
 }
-.sec-lead { color: var(--text-s); font-size: .92rem; line-height: 1.9; }
-.btn {
+.header-logo span {
+  display: block;
+  font-size: .65rem;
+  font-weight: 400;
+  color: var(--text-s);
+  letter-spacing: .04em;
+}
+
+/* Desktop Nav */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.header-nav a {
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--text);
+  position: relative;
+  transition: color .2s;
+}
+.header-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--green);
+  transition: width .25s;
+}
+.header-nav a:hover { color: var(--green); }
+.header-nav a:hover::after { width: 100%; }
+
+/* Header Right (tel + hours) */
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+.header-tel {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--green-d);
+  letter-spacing: .02em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.header-tel svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--green);
+}
+.header-hours {
+  font-size: .68rem;
+  color: var(--text-s);
+  margin-top: 1px;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+
+/* Mobile Menu */
+#nav-check { display: none; }
+
+@media (max-width: 860px) {
+  .header-nav { display: none; }
+  .hamburger { display: flex; }
+
+  #nav-check:checked ~ #mobile-nav {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #nav-check:checked ~ .hamburger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  #nav-check:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  #nav-check:checked ~ .hamburger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+#mobile-nav {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  width: 100%;
+  background: var(--cream);
+  padding: 24px 5% 32px;
+  box-shadow: var(--shadow-m);
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .3s, opacity .3s;
+  z-index: 999;
+}
+#mobile-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+#mobile-nav li a {
+  display: block;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--beige-d);
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--text);
+}
+#mobile-nav .m-tel {
+  margin-top: 20px;
+  text-align: center;
+}
+#mobile-nav .m-tel a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 13px 32px;
-  border-radius: var(--r-btn);
-  font-family: 'Zen Maru Gothic', sans-serif;
-  font-size: .9rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all .25s;
-  border: 2px solid transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--green-d);
+  border-bottom: none;
+  padding: 0;
 }
-.btn-primary { background: var(--green); color: var(--white); box-shadow: 0 4px 14px rgba(77,140,98,.35); }
-.btn-primary:hover { background: var(--green-d); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(77,140,98,.4); }
-.btn-outline { background: var(--white); color: var(--green); border-color: var(--green); }
-.btn-outline:hover { background: var(--green-pale); transform: translateY(-2px); }
-.btn-white { background: var(--white); color: var(--green-d); box-shadow: 0 4px 14px rgba(0,0,0,.15); }
-.btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.2); }
+#mobile-nav .m-hours {
+  text-align: center;
+  font-size: .75rem;
+  color: var(--text-s);
+  margin-top: 4px;
+}
 
-/* ── Wave divider ── */
-.wave-top svg { display: block; margin-top: -1px; }
-.wave-bot svg { display: block; margin-bottom: -1px; }
-
-/* ── Nav ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  height: 64px;
-  background: rgba(253,250,245,.96);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--beige-d);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 5%;
-  transition: box-shadow .3s;
-}
-nav.scrolled { box-shadow: var(--shadow-s); }
-.nav-logo {
-  display: flex; align-items: center; gap: 10px;
-}
-.nav-logo-mark {
-  width: 38px; height: 38px;
-  background: var(--green);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-.nav-logo-mark svg { width: 22px; height: 22px; fill: white; }
-.nav-logo-txt { line-height: 1.25; }
-.nav-logo-main { font-size: .95rem; font-weight: 700; color: var(--green-d); }
-.nav-logo-sub { font-size: .65rem; color: var(--text-s); font-weight: 400; }
-.nav-menu { display: flex; align-items: center; gap: 24px; }
-.nav-menu a { font-size: .82rem; font-weight: 500; color: var(--text-s); transition: color .2s; }
-.nav-menu a:hover { color: var(--green); }
-.nav-tel-wrap { display: flex; flex-direction: column; align-items: flex-end; }
-.nav-tel-num { font-family: 'Poppins', sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--green-d); letter-spacing: .02em; }
-.nav-tel-label { font-size: .6rem; color: var(--text-s); text-align: right; }
-
-/* ── Hero ── */
-.hero {
-  padding-top: 64px;
-  min-height: 100vh;
-  background: var(--beige);
+/* ─────────────────────────────
+   MAIN VISUAL (Hero Slideshow)
+   Exactly like sumikkocare.jp
+───────────────────────────── */
+#mv {
+  padding-top: var(--header-h);
   position: relative;
   overflow: hidden;
-  display: flex; align-items: center;
 }
-.hero-bg-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: var(--green-pale);
-  pointer-events: none;
-}
-.hero-inner {
-  max-width: 1080px; margin: 0 auto; padding: 64px 5%;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
-}
-.hero-copy { position: relative; z-index: 1; }
-.hero-sub-copy { font-size: .88rem; color: var(--green); font-weight: 500; margin-bottom: 16px; letter-spacing: .04em; }
-.hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.7rem); font-weight: 700; color: var(--green-d); line-height: 1.5; margin-bottom: 20px; }
-.hero-tagline { font-size: .95rem; color: var(--text-s); line-height: 1.95; margin-bottom: 36px; }
-.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-.hero-img-col { position: relative; z-index: 1; }
-.hero-img-main { border-radius: var(--r-card); overflow: hidden; box-shadow: var(--shadow-l); }
-.hero-img-main img { height: 400px; object-fit: cover; }
-.hero-stat-bar {
-  position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%);
-  background: var(--white); border-radius: 14px;
-  padding: 14px 24px; box-shadow: var(--shadow-m);
-  display: flex; align-items: center; gap: 20px; white-space: nowrap;
-}
-.hero-stat { text-align: center; }
-.hero-stat-num { font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 600; color: var(--green); line-height: 1; }
-.hero-stat-label { font-size: .68rem; color: var(--text-s); margin-top: 2px; }
-.hero-stat-div { width: 1px; height: 36px; background: var(--beige-d); }
 
-/* ── About ── */
-.about { padding: 96px 0; background: var(--cream); }
-.about-inner { max-width: 1080px; margin: 0 auto; padding: 0 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-.about-img { border-radius: var(--r-card); overflow: hidden; box-shadow: var(--shadow-m); }
-.about-img img { height: 400px; object-fit: cover; }
-.about-text { }
-.about-quote {
-  border-left: 4px solid var(--green-l);
-  padding: 16px 18px;
-  background: var(--green-pale2);
-  border-radius: 0 12px 12px 0;
-  margin: 22px 0;
-  font-size: .95rem;
-  color: var(--green-d);
-  font-weight: 500;
+.mv-swiper {
+  width: 100%;
+  height: calc(100vh - var(--header-h));
+  min-height: 520px;
+}
+
+.mv-swiper .swiper-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+.mv-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.08);
+  transition: transform 8s ease;
+}
+
+.mv-swiper .swiper-slide-active img {
+  transform: scale(1.0);
+}
+
+/* Overlay text — just like sumikkocare.jp */
+.mv-txt {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 8% 5%;
+  z-index: 10;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,.42) 0%,
+    rgba(0,0,0,.18) 60%,
+    transparent 100%
+  );
+}
+
+.mv-txt01 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  text-shadow: 0 2px 12px rgba(0,0,0,.4);
+}
+.mv-txt01 p { display: block; }
+
+.mv-txt02 {
+  font-size: clamp(.85rem, 2vw, 1.1rem);
+  color: rgba(255,255,255,.88);
+  margin-top: 20px;
+  font-weight: 400;
+  line-height: 1.75;
+  text-shadow: 0 1px 8px rgba(0,0,0,.4);
+  max-width: 500px;
+}
+
+/* Swiper pagination */
+.mv-swiper .swiper-pagination-bullet {
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,.6);
+  opacity: 1;
+}
+.mv-swiper .swiper-pagination-bullet-active {
+  background: #fff;
+  width: 36px;
+}
+
+/* ─────────────────────────────
+   ABOUT (About us intro)
+───────────────────────────── */
+#about-top {
+  padding: 90px 0;
+  background: var(--white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-img {
+  border-radius: var(--r-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-m);
+}
+.about-img img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+.about-body .sec-ttl {
+  text-align: left;
+}
+
+.about-body p {
+  font-size: .9rem;
+  color: var(--text-s);
+  margin-bottom: 16px;
   line-height: 1.9;
 }
-.about-text p { font-size: .9rem; color: var(--text-s); line-height: 1.95; margin-bottom: 14px; }
 
-/* ── Services ── */
-.services { padding: 96px 0; background: var(--beige); }
-.services-header { text-align: center; margin-bottom: 52px; }
-.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* ─────────────────────────────
+   MENU (Service + Pricing)
+───────────────────────────── */
+#menu {
+  padding: 90px 0;
+  background: var(--cream);
+}
+
+.menu-lead {
+  max-width: 800px;
+  margin: 0 auto 48px;
+  text-align: center;
+  font-size: .9rem;
+  color: var(--text-s);
+  line-height: 1.9;
+}
+
+/* Service cards */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
 .service-card {
-  background: var(--white); border-radius: var(--r-card);
-  overflow: hidden; box-shadow: var(--shadow-s);
-  transition: transform .3s, box-shadow .3s;
+  background: var(--white);
+  border-radius: var(--r-card);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-s);
+  transition: transform .25s, box-shadow .25s;
 }
-.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-m); }
-.service-img { height: 170px; overflow: hidden; }
-.service-img img { height: 100%; object-fit: cover; transition: transform .4s; }
-.service-card:hover .service-img img { transform: scale(1.06); }
-.service-body { padding: 22px; }
-.service-label {
-  display: inline-block; font-size: .68rem; font-weight: 700;
-  color: var(--green); background: var(--green-pale);
-  padding: 2px 10px; border-radius: 10px; margin-bottom: 8px;
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-m);
 }
-.service-body h3 { font-size: .92rem; font-weight: 700; color: var(--green-d); margin-bottom: 8px; }
-.service-body p { font-size: .82rem; color: var(--text-s); line-height: 1.75; }
-
-/* ── Features ── */
-.features { padding: 96px 0; background: var(--cream); }
-.features-header { text-align: center; margin-bottom: 52px; }
-.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.feature-card {
-  background: var(--white); border-radius: var(--r-card);
-  padding: 32px 26px; border: 2px solid var(--beige-d);
-  transition: border-color .25s, box-shadow .25s, transform .25s;
+.service-card .icon {
+  font-size: 2.2rem;
+  margin-bottom: 14px;
 }
-.feature-card:hover { border-color: var(--green-l); box-shadow: var(--shadow-s); transform: translateY(-4px); }
-.feature-num {
-  font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 600;
-  color: var(--green-pale); line-height: 1; margin-bottom: 12px;
+.service-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-d);
+  margin-bottom: 10px;
 }
-.feature-card h3 { font-size: .92rem; font-weight: 700; color: var(--green-d); margin-bottom: 10px; }
-.feature-card p { font-size: .82rem; color: var(--text-s); line-height: 1.75; }
-
-/* ── Flow ── */
-.flow { padding: 96px 0; background: var(--beige); }
-.flow-header { text-align: center; margin-bottom: 52px; }
-.flow-list { max-width: 640px; margin: 0 auto; }
-.flow-item { display: flex; gap: 20px; margin-bottom: 0; position: relative; padding-bottom: 32px; }
-.flow-item:last-child { padding-bottom: 0; }
-.flow-item:not(:last-child)::after {
-  content: '';
-  position: absolute; left: 21px; top: 48px; bottom: 0;
-  width: 2px; background: var(--beige-d); border-radius: 2px;
-}
-.flow-num {
-  width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
-  background: var(--green); color: var(--white);
-  font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1rem;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 12px rgba(77,140,98,.3);
-  position: relative; z-index: 1;
-}
-.flow-body { padding-top: 8px; }
-.flow-body h3 { font-size: .92rem; font-weight: 700; color: var(--green-d); margin-bottom: 6px; }
-.flow-body p { font-size: .85rem; color: var(--text-s); line-height: 1.8; }
-
-/* ── Fee ── */
-.fee { padding: 96px 0; background: var(--cream); }
-.fee-header { text-align: center; margin-bottom: 52px; }
-.fee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.fee-card {
-  background: var(--white); border-radius: var(--r-card);
-  padding: 32px; border: 2px solid var(--beige-d);
-}
-.fee-card h3 {
-  font-size: 1rem; font-weight: 700; color: var(--green-d);
-  margin-bottom: 16px; padding-bottom: 14px;
-  border-bottom: 2px solid var(--beige-d);
-}
-.fee-card p { font-size: .88rem; color: var(--text-s); line-height: 1.85; }
-.fee-note {
-  margin-top: 14px; background: var(--green-pale2);
-  border-radius: 10px; padding: 12px 14px;
-  font-size: .8rem; color: var(--green-d); line-height: 1.7;
+.service-card p {
+  font-size: .82rem;
+  color: var(--text-s);
+  line-height: 1.75;
 }
 
-/* ── Access ── */
-.access { padding: 96px 0; background: var(--beige); }
-.access-header { text-align: center; margin-bottom: 52px; }
-.access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
-.access-info { background: var(--white); border-radius: var(--r-card); overflow: hidden; box-shadow: var(--shadow-s); }
-.access-row {
-  display: grid; grid-template-columns: 110px 1fr;
-  border-bottom: 1px solid var(--beige);
+/* Pricing table */
+.price-section {
+  background: var(--white);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-s);
 }
-.access-row:last-child { border-bottom: none; }
-.access-key {
-  background: var(--green-pale2); color: var(--green-d);
-  font-size: .78rem; font-weight: 700;
-  padding: 16px 14px; display: flex; align-items: center;
-}
-.access-val { padding: 16px 16px; font-size: .88rem; color: var(--text); line-height: 1.7; }
-.access-tel { font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--green); }
-.access-map { border-radius: var(--r-card); overflow: hidden; box-shadow: var(--shadow-m); }
-.access-map iframe { width: 100%; height: 340px; border: none; display: block; }
 
-/* ── CTA Banner ── */
-.cta-banner {
-  padding: 80px 5%;
-  background: linear-gradient(135deg, var(--green-d) 0%, var(--green) 100%);
-  text-align: center; position: relative; overflow: hidden;
+.price-thead {
+  background: var(--green);
+  color: #fff;
+  padding: 18px 28px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .04em;
 }
-.cta-banner::before {
-  content: '';
-  position: absolute; top: -80px; right: -80px;
-  width: 320px; height: 320px; border-radius: 50%;
-  background: rgba(255,255,255,.06);
-}
-.cta-banner h2 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 700; color: var(--white); margin-bottom: 12px; }
-.cta-banner p { color: rgba(255,255,255,.85); font-size: .9rem; line-height: 1.9; margin-bottom: 36px; }
-.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-.btn-outline-w { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.7); border-radius: var(--r-btn); padding: 13px 30px; font-family: 'Zen Maru Gothic', sans-serif; font-size: .88rem; font-weight: 700; transition: all .25s; }
-.btn-outline-w:hover { background: rgba(255,255,255,.12); transform: translateY(-2px); }
 
-/* ── Footer ── */
-footer { background: #1e3028; color: rgba(255,255,255,.65); padding: 56px 5% 28px; }
-.footer-inner { max-width: 1080px; margin: 0 auto; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
-.footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-.footer-logo-mark { width: 32px; height: 32px; background: var(--green-l); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-.footer-logo-mark svg { width: 18px; height: 18px; fill: white; }
-.footer-logo-text { font-size: .95rem; font-weight: 700; color: var(--white); }
-.footer-desc { font-size: .82rem; line-height: 1.8; }
-.footer-h { color: var(--white); font-size: .82rem; font-weight: 700; margin-bottom: 14px; letter-spacing: .04em; }
-.footer-list { list-style: none; }
-.footer-list li { margin-bottom: 10px; }
-.footer-list a { font-size: .8rem; color: rgba(255,255,255,.55); transition: color .2s; }
-.footer-list a:hover { color: var(--green-l); }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; text-align: center; font-size: .72rem; color: rgba(255,255,255,.4); }
-
-/* ── Float ── */
-.float-cta {
-  position: fixed; bottom: 20px; right: 20px; z-index: 300;
-  display: flex; flex-direction: column; gap: 10px;
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
 }
+.price-table th, .price-table td {
+  padding: 16px 28px;
+  border-bottom: 1px solid var(--beige-d);
+  font-size: .9rem;
+}
+.price-table th {
+  width: 40%;
+  font-weight: 600;
+  color: var(--green-d);
+  background: var(--green-pale2);
+}
+.price-table td {
+  color: var(--text);
+}
+.price-table tr:last-child th,
+.price-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ─────────────────────────────
+   STAFF
+───────────────────────────── */
+#staff {
+  padding: 90px 0;
+  background: var(--green-pale);
+}
+
+.staff-swiper {
+  padding: 10px 5px 10px;
+}
+
+.staff-card {
+  background: var(--white);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-s);
+}
+
+.staff-card .s-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.staff-card .s-body {
+  padding: 22px 22px 26px;
+}
+
+.staff-card .s-role {
+  display: inline-block;
+  font-size: .72rem;
+  background: var(--green-pale);
+  color: var(--green-d);
+  border-radius: 20px;
+  padding: 3px 12px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.staff-card .s-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.staff-card .s-name-en {
+  font-size: .75rem;
+  color: var(--text-s);
+  margin-bottom: 12px;
+}
+.staff-card .s-text {
+  font-size: .82rem;
+  color: var(--text-s);
+  line-height: 1.75;
+}
+
+/* ─────────────────────────────
+   CONTACT CTA BAR
+   (Same as sumikkocare.jp's green CTA bar)
+───────────────────────────── */
+#cta-bar {
+  background: var(--green);
+  padding: 50px 0;
+  text-align: center;
+}
+
+.cta-lead {
+  font-size: 1rem;
+  color: rgba(255,255,255,.9);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.cta-tel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: .03em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.cta-tel svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+
+.cta-hours {
+  font-size: .82rem;
+  color: rgba(255,255,255,.8);
+  margin-top: 6px;
+}
+
+.cta-note {
+  font-size: .72rem;
+  color: rgba(255,255,255,.6);
+  margin-top: 4px;
+}
+
+/* ─────────────────────────────
+   FAQ
+───────────────────────────── */
+#faq {
+  padding: 90px 0;
+  background: var(--white);
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--beige-d);
+  overflow: hidden;
+}
+
+.faq-q {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px 0;
+  cursor: pointer;
+  user-select: none;
+  transition: color .2s;
+}
+.faq-q:hover { color: var(--green); }
+
+.faq-letter {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--green);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 28px;
+}
+
+.faq-q-text {
+  flex: 1;
+  font-size: .92rem;
+  font-weight: 600;
+  line-height: 1.6;
+  padding-top: 2px;
+}
+
+.faq-arrow {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 4px;
+  transition: transform .3s;
+  color: var(--green);
+}
+.faq-item.open .faq-arrow {
+  transform: rotate(180deg);
+}
+
+.faq-a {
+  display: none;
+  padding: 0 0 22px 44px;
+}
+.faq-a-inner {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.faq-a-letter {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--brown);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 28px;
+}
+.faq-a-text {
+  font-size: .88rem;
+  color: var(--text-s);
+  line-height: 1.85;
+}
+
+/* ─────────────────────────────
+   NEWS
+───────────────────────────── */
+#news {
+  padding: 90px 0;
+  background: var(--cream);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.news-card {
+  background: var(--white);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-s);
+  transition: transform .25s, box-shadow .25s;
+}
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-m);
+}
+.news-card .n-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.news-card .n-body {
+  padding: 18px 18px 22px;
+}
+.news-card .n-date {
+  font-size: .72rem;
+  color: var(--text-s);
+  font-family: 'Poppins', sans-serif;
+}
+.news-card .n-title {
+  margin-top: 8px;
+  font-size: .88rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ─────────────────────────────
+   ABOUT / COMPANY INFO + MAP
+   (Same structure as sumikkocare.jp's About section)
+───────────────────────────── */
+#about {
+  padding: 90px 0;
+  background: var(--white);
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.company-summary h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--green-d);
+  margin-bottom: 20px;
+}
+
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+}
+.company-table th, .company-table td {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--beige-d);
+  vertical-align: top;
+  line-height: 1.7;
+}
+.company-table th {
+  width: 90px;
+  font-weight: 600;
+  color: var(--text-s);
+  flex-shrink: 0;
+}
+.company-table a {
+  color: var(--green);
+  text-decoration: underline;
+  font-size: .8rem;
+}
+
+.company-access {
+  font-size: .85rem;
+  color: var(--text-s);
+  margin-top: 18px;
+  line-height: 1.85;
+}
+
+.gmap-wrap {
+  border-radius: var(--r-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-m);
+}
+.gmap-wrap iframe {
+  width: 100%;
+  height: 380px;
+  display: block;
+  border: none;
+}
+
+/* SNS icons */
+.sns-list {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+}
+.sns-list a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--beige-d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: border-color .2s, color .2s;
+}
+.sns-list a:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+@media (max-width: 768px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .gmap-wrap iframe { height: 280px; }
+}
+
+/* ─────────────────────────────
+   FOOTER
+───────────────────────────── */
+footer {
+  background: var(--green-d);
+  color: rgba(255,255,255,.8);
+  padding: 48px 0 28px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 36px;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+.footer-logo span {
+  display: block;
+  font-size: .7rem;
+  font-weight: 300;
+  opacity: .7;
+  margin-top: 4px;
+}
+.footer-info {
+  font-size: .78rem;
+  line-height: 1.9;
+  opacity: .8;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-nav a {
+  font-size: .78rem;
+  color: rgba(255,255,255,.7);
+  transition: color .2s;
+}
+.footer-nav a:hover { color: #fff; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.15);
+  padding-top: 22px;
+  text-align: center;
+  font-size: .72rem;
+  opacity: .55;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ─────────────────────────────
+   FLOAT CTA (固定電話ボタン)
+───────────────────────────── */
+#float-cta {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .float-tel {
-  display: flex; align-items: center; gap: 8px;
-  background: var(--brown); color: var(--white);
-  padding: 11px 20px; border-radius: 28px;
-  font-weight: 700; font-size: .83rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,.2);
-  transition: all .2s;
+  background: var(--green);
+  color: #fff;
+  padding: 13px 22px;
+  border-radius: var(--r-btn);
+  font-size: .82rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-l);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background .2s, transform .2s;
 }
-.float-tel:hover { transform: translateY(-2px); }
-.float-mail {
-  display: flex; align-items: center; gap: 8px;
-  background: var(--green); color: var(--white);
-  padding: 11px 20px; border-radius: 28px;
-  font-weight: 700; font-size: .83rem;
-  box-shadow: 0 4px 16px rgba(77,140,98,.3);
-  transition: all .2s;
+.float-tel:hover {
+  background: var(--green-d);
+  transform: translateY(-2px);
 }
-.float-mail:hover { transform: translateY(-2px); }
+.float-tel svg {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
 
-/* ── Responsive ── */
-@media (max-width: 860px) {
-  .nav-menu { display: none; }
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 48px 5%; }
-  .hero-img-col { display: none; }
-  .about-inner { grid-template-columns: 1fr; gap: 36px; }
-  .service-grid { grid-template-columns: 1fr 1fr; }
-  .features-grid { grid-template-columns: 1fr 1fr; }
-  .fee-grid { grid-template-columns: 1fr; }
-  .access-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+.float-contact {
+  background: var(--brown);
+  color: #fff;
+  padding: 13px 22px;
+  border-radius: var(--r-btn);
+  font-size: .82rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-l);
+  text-align: center;
+  transition: background .2s, transform .2s;
 }
-@media (max-width: 520px) {
-  .service-grid, .features-grid { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 1.7rem; }
-  .hero-btns { flex-direction: column; }
+.float-contact:hover {
+  background: #6d5238;
+  transform: translateY(-2px);
+}
+
+/* ─────────────────────────────
+   Responsive Adjustments
+───────────────────────────── */
+@media (max-width: 860px) {
+  .header-nav, .header-right { display: none; }
+  .header-inner { justify-content: space-between; }
+
+  .mv-txt { padding: 0 6% 8%; }
+  .mv-txt01 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+}
+
+@media (max-width: 480px) {
+  #float-cta { bottom: 18px; right: 14px; }
+  .float-tel, .float-contact { padding: 11px 18px; font-size: .78rem; }
 }
 </style>
 </head>
 <body>
 
-<!-- Nav -->
-<nav id="nav">
-  <a href="#" class="nav-logo">
-    <div class="nav-logo-mark">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8 8 4 10 6 16c1 3 4 5 6 6 2-1 5-3 6-6 2-6-2-8-6-14z"/></svg>
+<!-- ──────────────── HEADER ──────────────── -->
+<input type="checkbox" id="nav-check" hidden>
+<header id="header">
+  <div class="header-inner">
+    <!-- Logo -->
+    <a href="#" class="header-logo">
+      訪問看護ステーション もりのたね
+      <span>Mori no Tane Home Nursing Station</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="header-nav">
+      <a href="#menu">サービス</a>
+      <a href="#staff">スタッフ</a>
+      <a href="#faq">よくある質問</a>
+      <a href="#news">お知らせ</a>
+      <a href="#about">事業所概要</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+
+    <!-- Tel -->
+    <div class="header-right">
+      <div class="header-tel">
+        <svg viewBox="0 0 27 27"><path d="M25.5,18.6c-1.8,0-3.6-.3-5.3-.8-.5-.2-1.1,0-1.5.4l-2.4,3C12.1,19,8.1,15.2,6,10.8l2.9-2.5c.4-.4.5-1,.4-1.5C8.7,5.1,8.5,3.3,8.5,1.5,8.5.7,7.8,0,7,0H1.8C1,0,0,.4,0,1.5,0,15.4,11.6,27,25.5,27c1.1,0,1.5-.9,1.5-1.8v-5.2C27,19.2,26.3,18.6,25.5,18.6z"/></svg>
+        <a href="tel:0862595850">086-259-5850</a>
+      </div>
+      <div class="header-hours">365日 24時間対応</div>
     </div>
-    <div class="nav-logo-txt">
-      <div class="nav-logo-main">もりのたね</div>
-      <div class="nav-logo-sub">訪問看護ステーション</div>
-    </div>
-  </a>
-  <nav class="nav-menu">
-    <a href="#about">私たちについて</a>
-    <a href="#services">サービス</a>
-    <a href="#flow">ご利用の流れ</a>
-    <a href="#fee">料金</a>
-    <a href="#access">アクセス</a>
-  </nav>
-  <div class="nav-tel-wrap">
-    <a href="tel:0862595850" class="nav-tel-num">086-259-5850</a>
-    <span class="nav-tel-label">24時間・365日受付</span>
+
+    <!-- Hamburger label -->
+    <label for="nav-check" class="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav id="mobile-nav">
+  <ul>
+    <li><a href="#menu" onclick="document.getElementById('nav-check').checked=false">サービス</a></li>
+    <li><a href="#staff" onclick="document.getElementById('nav-check').checked=false">スタッフ</a></li>
+    <li><a href="#faq" onclick="document.getElementById('nav-check').checked=false">よくある質問</a></li>
+    <li><a href="#news" onclick="document.getElementById('nav-check').checked=false">お知らせ</a></li>
+    <li><a href="#about" onclick="document.getElementById('nav-check').checked=false">事業所概要</a></li>
+    <li><a href="#contact" onclick="document.getElementById('nav-check').checked=false">お問い合わせ</a></li>
+  </ul>
+  <div class="m-tel">
+    <a href="tel:0862595850">
+      <svg width="20" height="20" viewBox="0 0 27 27" fill="currentColor"><path d="M25.5,18.6c-1.8,0-3.6-.3-5.3-.8-.5-.2-1.1,0-1.5.4l-2.4,3C12.1,19,8.1,15.2,6,10.8l2.9-2.5c.4-.4.5-1,.4-1.5C8.7,5.1,8.5,3.3,8.5,1.5,8.5.7,7.8,0,7,0H1.8C1,0,0,.4,0,1.5,0,15.4,11.6,27,25.5,27c1.1,0,1.5-.9,1.5-1.8v-5.2C27,19.2,26.3,18.6,25.5,18.6z"/></svg>
+      086-259-5850
+    </a>
+    <div class="m-hours">365日 24時間対応</div>
   </div>
 </nav>
 
-<!-- Hero -->
-<section class="hero">
-  <div class="hero-bg-circle" style="width:600px;height:600px;top:-200px;right:-150px;opacity:.5;"></div>
-  <div class="hero-bg-circle" style="width:300px;height:300px;bottom:-100px;left:-80px;opacity:.4;"></div>
-
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <div class="tag">岡山市南区の訪問看護</div>
-      <h1>やさしさと誠実さで、<br>あなたの暮らしに<br>寄り添います。</h1>
-      <p class="hero-tagline">
-        住み慣れたご自宅で、安心して暮らし続けられるよう<br>
-        専門の看護師がしっかりとサポートします。<br>
-        365日・24時間、いつでもお気軽にご連絡ください。
-      </p>
-      <div class="hero-btns">
-        <a href="tel:0862595850" class="btn btn-primary">今すぐ電話する</a>
-        <a href="#flow" class="btn btn-outline">ご利用の流れを見る</a>
+<!-- ──────────────── MAIN VISUAL ──────────────── -->
+<div id="mv">
+  <div class="swiper mv-swiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1600&q=80" alt="看護師がご利用者様に寄り添う様子" loading="eager">
+        <div class="mv-txt">
+          <div class="mv-txt01">
+            <p>やさしさと誠実さで、</p>
+            <p>最良のケアを。</p>
+          </div>
+          <div class="mv-txt02">
+            <p>どこにいても必要な時に駆けつけ、寄り添える<br>訪問看護サービスを岡山市南区で提供します。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1511174511562-5f97f4f4e3d5?w=1600&q=80" alt="在宅ケアのイメージ" loading="lazy">
+        <div class="mv-txt">
+          <div class="mv-txt01">
+            <p>利用者さまにとって</p>
+            <p>最良の環境を。</p>
+          </div>
+          <div class="mv-txt02">
+            <p>スタッフひとりひとりが誠意を持って、<br>ご自宅での安心な療養生活をお手伝いします。</p>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1600&q=80" alt="看護師スタッフ" loading="lazy">
+        <div class="mv-txt">
+          <div class="mv-txt01">
+            <p>365日 24時間、</p>
+            <p>いつでも安心。</p>
+          </div>
+          <div class="mv-txt02">
+            <p>急なご連絡にも対応。<br>岡山市南区を中心にお伺いいたします。</p>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="hero-img-col">
-      <div class="hero-img-main">
-        <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=80" alt="看護師が自宅でケアをしている様子">
-      </div>
-      <div class="hero-stat-bar">
-        <div class="hero-stat">
-          <div class="hero-stat-num">365</div>
-          <div class="hero-stat-label">日対応</div>
-        </div>
-        <div class="hero-stat-div"></div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">24h</div>
-          <div class="hero-stat-label">受付</div>
-        </div>
-        <div class="hero-stat-div"></div>
-        <div class="hero-stat">
-          <div class="hero-stat-num" style="font-size:1rem;">3360191906</div>
-          <div class="hero-stat-label">事業所番号</div>
-        </div>
-      </div>
-    </div>
+    <div class="swiper-pagination"></div>
   </div>
-</section>
+</div>
 
-<!-- About -->
-<section class="about" id="about">
-  <div class="about-inner">
-    <div class="about-img">
-      <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=700&q=80" alt="温かいケアの様子">
-    </div>
-    <div class="about-text">
-      <div class="tag">私たちについて</div>
-      <h2 class="sec-title">もりのたねについて</h2>
-      <div class="about-quote">
-        利用者さまにとって最良のケアを<br>
-        スタッフにとって最良の環境を<br>
-        やさしさと誠実さで、社会に貢献します
-      </div>
-      <p>訪問看護ステーション「もりのたね」は、岡山市南区を拠点に、住み慣れたご自宅での療養生活を支えるサービスを提供しています。</p>
-      <p>「もりのたね（森の種）」という名前には、小さな種が大きな木へと成長するように、一つひとつの丁寧なケアで利用者さまの生活の質を高めていきたいという想いが込められています。</p>
-      <p>医療処置から日常生活のサポートまで、専門の看護師がご自宅へお伺いします。</p>
-    </div>
-  </div>
-</section>
-
-<!-- Services -->
-<section class="services" id="services">
+<!-- ──────────────── ABOUT TOP ──────────────── -->
+<section id="about-top">
   <div class="inner">
-    <div class="services-header">
-      <div class="tag">サービス内容</div>
-      <h2 class="sec-title">提供しているサービス</h2>
-      <p class="sec-lead">医療的なケアから日常生活のサポートまで、幅広くご支援します。</p>
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=900&q=80" alt="岡山市の風景">
+      </div>
+      <div class="about-body">
+        <div class="sec-ttl" style="text-align:left;">
+          <span class="en">About Us</span>
+          <span class="ja">利用者さまとご家族様の笑顔のために、真心を込めてケアいたします</span>
+        </div>
+        <p>「もりのたね」は、岡山市南区に根ざした訪問看護ステーションです。利用者さまそれぞれのニーズにお応えし、ご自宅での安心な療養生活をサポートしております。</p>
+        <p>長年の看護経験を持つスタッフが、責任を持って丁寧に対応いたします。初めて訪問看護をご利用になる方も、どうぞお気軽にご相談ください。365日・24時間いつでも対応可能です。</p>
+        <p>「利用者さまにとって最良のケアを、スタッフにとって最良の環境を」——この理念のもと、やさしさと誠実さで地域社会に貢献し続けます。</p>
+        <div style="margin-top:28px;">
+          <a href="#about" class="btn-border">事業所概要へ</a>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- ──────────────── MENU (Services) ──────────────── -->
+<section id="menu">
+  <div class="inner">
+    <div class="sec-ttl">
+      <span class="en">Menu</span>
+      <span class="ja">ご利用者様それぞれのニーズにお応えする訪問看護メニューを岡山市南区で提供</span>
+    </div>
+
+    <p class="menu-lead">
+      介護が必要なご家族がいらっしゃる方のお力になるため、岡山市南区に根ざし、利用者様それぞれのニーズにお応えする訪問看護サービスをご案内しております。初めて訪問看護をご利用になる方もお気軽にご相談ください。
+    </p>
+
+    <!-- Service Cards -->
     <div class="service-grid">
       <div class="service-card">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=500&q=80" alt="医療処置">
-        </div>
-        <div class="service-body">
-          <div class="service-label">Medical</div>
-          <h3>医療処置・服薬管理</h3>
-          <p>点滴・注射・創傷処置・カテーテル管理など、専門的な医療処置を安全に行います。</p>
-        </div>
+        <div class="icon">🩺</div>
+        <h3>健康状態の管理・観察</h3>
+        <p>バイタルサインの確認、体調変化の観察、主治医への報告・連絡を行います。早期発見・早期対応で安心の在宅療養を。</p>
       </div>
       <div class="service-card">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=500&q=80" alt="健康管理">
-        </div>
-        <div class="service-body">
-          <div class="service-label">Health</div>
-          <h3>健康状態の観察・管理</h3>
-          <p>バイタルサイン測定・身体状況の変化を定期的に観察し、主治医へ報告・連携します。</p>
-        </div>
+        <div class="icon">💊</div>
+        <h3>医療処置・服薬管理</h3>
+        <p>点滴管理、創傷処置、カテーテルケアなど医療的処置。内服確認・管理もお任せください。</p>
       </div>
       <div class="service-card">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80" alt="清潔ケア">
-        </div>
-        <div class="service-body">
-          <div class="service-label">Care</div>
-          <h3>清潔ケア・入浴支援</h3>
-          <p>全身清拭・入浴介助・口腔ケアなど、清潔を保ちながら感染予防にも配慮します。</p>
-        </div>
+        <div class="icon">🛁</div>
+        <h3>身体ケア・生活支援</h3>
+        <p>清拭・入浴介助、食事・排泄介助、ポジショニングなど日常生活のサポートを丁寧に行います。</p>
       </div>
       <div class="service-card">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=500&q=80" alt="認知症ケア">
-        </div>
-        <div class="service-body">
-          <div class="service-label">Dementia</div>
-          <h3>認知症ケア</h3>
-          <p>認知症の方が安心して在宅生活を続けられるよう、専門的なケアでサポートします。</p>
-        </div>
+        <div class="icon">🧠</div>
+        <h3>認知症ケア</h3>
+        <p>認知症の方が自宅でその人らしく過ごせるよう、専門的ケアを提供。ご家族様へのアドバイスも行います。</p>
       </div>
       <div class="service-card">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=500&q=80" alt="付き添い">
-        </div>
-        <div class="service-body">
-          <div class="service-label">Support</div>
-          <h3>受診付き添い・移動支援</h3>
-          <p>病院への受診付き添いや移動のサポートなど、保険外サービスも柔軟にご相談ください。</p>
-        </div>
+        <div class="icon">🌿</div>
+        <h3>ターミナルケア</h3>
+        <p>人生の最期まで住み慣れた自宅で過ごせるよう、本人・ご家族に寄り添った看護を提供します。</p>
       </div>
       <div class="service-card">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80" alt="家族支援">
-        </div>
-        <div class="service-body">
-          <div class="service-label">Family</div>
-          <h3>ご家族へのサポート</h3>
-          <p>介護方法のアドバイスや精神的なサポートなど、ご家族も含めたトータルケアを行います。</p>
-        </div>
+        <div class="icon">💬</div>
+        <h3>リハビリテーション支援</h3>
+        <p>理学療法士・作業療法士と連携した機能回復訓練。日常生活動作の維持・改善をサポートします。</p>
       </div>
+    </div>
+
+    <!-- Pricing Table -->
+    <div class="price-section">
+      <div class="price-thead">訪問看護の利用料金目安</div>
+      <table class="price-table">
+        <tbody>
+          <tr>
+            <th>介護保険適用</th>
+            <td>要介護・要支援認定の方は介護保険が適用されます（1割〜3割負担）</td>
+          </tr>
+          <tr>
+            <th>医療保険適用</th>
+            <td>医療保険でのご利用も可能です（主治医の指示書が必要）</td>
+          </tr>
+          <tr>
+            <th>自費サービス</th>
+            <td>30分 ¥2,750〜 / 60分 ¥4,400〜 / 90分 ¥6,600〜</td>
+          </tr>
+          <tr>
+            <th>交通費</th>
+            <td>1km / ¥110円〜（実費）</td>
+          </tr>
+          <tr>
+            <th>時間外対応</th>
+            <td>時間外・緊急訪問は別途ご相談ください（24時間対応）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="btn-wrap">
+      <a href="#contact" class="btn-border">詳しいご相談はこちら</a>
     </div>
   </div>
 </section>
 
-<!-- Features -->
-<section class="features" id="features">
+<!-- ──────────────── STAFF ──────────────── -->
+<section id="staff">
   <div class="inner">
-    <div class="features-header">
-      <div class="tag">選ばれる理由</div>
-      <h2 class="sec-title">もりのたねが選ばれる理由</h2>
+    <div class="sec-ttl">
+      <span class="en">Staff</span>
+      <span class="ja">看護師として経験と技術を培い、ご利用者様の生活に寄り添うスタッフをご紹介します</span>
     </div>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-num">01</div>
-        <h3>24時間365日対応</h3>
-        <p>夜間・休日・緊急時も関係なく、専門の看護師がすぐにご自宅へ駆けつけます。</p>
+
+    <div class="swiper staff-swiper">
+      <div class="swiper-wrapper">
+        <!-- Staff 1 -->
+        <div class="swiper-slide">
+          <div class="staff-card">
+            <img class="s-img" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80&fit=crop&crop=top" alt="看護師スタッフ1">
+            <div class="s-body">
+              <span class="s-role">管理者・訪問看護師</span>
+              <div class="s-name">森田 みどり</div>
+              <div class="s-name-en">Midori Morita</div>
+              <p class="s-text">「もりのたね」代表。地域の皆さまの「困った」を解決できる存在となれるよう、きめ細やかなサービスをお届けいたします。安心してお声がけください。</p>
+            </div>
+          </div>
+        </div>
+        <!-- Staff 2 -->
+        <div class="swiper-slide">
+          <div class="staff-card">
+            <img class="s-img" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80&fit=crop&crop=top" alt="看護師スタッフ2">
+            <div class="s-body">
+              <span class="s-role">訪問看護師</span>
+              <div class="s-name">田中 さくら</div>
+              <div class="s-name-en">Sakura Tanaka</div>
+              <p class="s-text">病院での急性期・慢性期の経験を経て、在宅看護の世界へ。「その人らしく生きる」を大切に、一人ひとりに寄り添ったケアを心がけています。</p>
+            </div>
+          </div>
+        </div>
+        <!-- Staff 3 -->
+        <div class="swiper-slide">
+          <div class="staff-card">
+            <img class="s-img" src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80&fit=crop&crop=top" alt="看護師スタッフ3">
+            <div class="s-body">
+              <span class="s-role">訪問看護師</span>
+              <div class="s-name">山本 はる</div>
+              <div class="s-name-en">Haru Yamamoto</div>
+              <p class="s-text">認知症ケア・ターミナルケアに力を注いでいます。ご利用者様とご家族様が「安心」を感じられる時間をつくることが、わたしの喜びです。</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-num">02</div>
-        <h3>経験豊富な看護師</h3>
-        <p>病院での臨床経験を持つ看護師が在籍。専門知識で安心のサービスを提供します。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">03</div>
-        <h3>オーダーメイドケア</h3>
-        <p>お一人おひとりの状態・生活環境・ご希望に合わせたケアプランをご提案します。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">04</div>
-        <h3>多職種との連携</h3>
-        <p>主治医・ケアマネジャー・リハビリスタッフと密に連携し、チームでケアします。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">05</div>
-        <h3>在宅移行サポート</h3>
-        <p>入院中から退院後の生活を見据えて計画。スムーズな在宅生活の開始を支援します。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">06</div>
-        <h3>家族への丁寧な説明</h3>
-        <p>ご本人だけでなくご家族の不安も解消。定期報告といつでも相談できる体制を整えています。</p>
-      </div>
+      <div class="swiper-button-prev staff-prev"></div>
+      <div class="swiper-button-next staff-next"></div>
+    </div>
+
+    <div class="btn-wrap">
+      <a href="#contact" class="btn-border">スタッフへの相談はこちら</a>
     </div>
   </div>
 </section>
 
-<!-- Flow -->
-<section class="flow" id="flow">
+<!-- ──────────────── CONTACT CTA BAR ──────────────── -->
+<div id="cta-bar">
   <div class="inner">
-    <div class="flow-header">
-      <div class="tag">ご利用の流れ</div>
-      <h2 class="sec-title">お申込みについて</h2>
-      <p class="sec-lead">まずはお気軽にご連絡ください。丁寧にご説明します。</p>
+    <p class="cta-lead">お気軽にご連絡ください。</p>
+    <div class="cta-tel">
+      <svg viewBox="0 0 27 27"><path d="M25.5,18.6c-1.8,0-3.6-.3-5.3-.8-.5-.2-1.1,0-1.5.4l-2.4,3C12.1,19,8.1,15.2,6,10.8l2.9-2.5c.4-.4.5-1,.4-1.5C8.7,5.1,8.5,3.3,8.5,1.5,8.5.7,7.8,0,7,0H1.8C1,0,0,.4,0,1.5,0,15.4,11.6,27,25.5,27c1.1,0,1.5-.9,1.5-1.8v-5.2C27,19.2,26.3,18.6,25.5,18.6z"/></svg>
+      <a href="tel:0862595850">086-259-5850</a>
     </div>
-    <div class="flow-list">
-      <div class="flow-item">
-        <div class="flow-num">1</div>
-        <div class="flow-body">
-          <h3>まずはご連絡ください</h3>
-          <p>お電話もしくはメールにてご連絡ください。どんな小さなことでもお気軽にご相談ください。</p>
+    <p class="cta-hours">365日 24時間対応</p>
+    <p class="cta-note">※営業・勧誘のお電話はすべてお控えください</p>
+    <div style="margin-top:24px;">
+      <a href="#contact" class="btn-border white">お問い合わせフォームへ</a>
+    </div>
+  </div>
+</div>
+
+<!-- ──────────────── FAQ ──────────────── -->
+<section id="faq">
+  <div class="inner">
+    <div class="sec-ttl">
+      <span class="en">Q&amp;A</span>
+      <span class="ja">安心して在宅ケアをご利用いただけるよう、よくある質問にQ&amp;A形式でお答えします</span>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-letter">Q</span>
+          <span class="faq-q-text">訪問エリアはどこですか？</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span class="faq-a-letter">A</span>
+            <span class="faq-a-text">岡山市南区を中心に、岡山市全域に対応しております。エリア外でもご相談いただける場合がございますので、まずはお気軽にお電話ください。</span>
+          </div>
         </div>
       </div>
-      <div class="flow-item">
-        <div class="flow-num">2</div>
-        <div class="flow-body">
-          <h3>ご面談・ご説明</h3>
-          <p>ご面談を行い、サービス内容やお手続きについて丁寧にご説明します。主治医・ケアマネジャーとの連携も行います。</p>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-letter">Q</span>
+          <span class="faq-q-text">夜間・休日でも対応していただけますか？</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span class="faq-a-letter">A</span>
+            <span class="faq-a-text">はい。365日・24時間対応しております。夜間や緊急時のご連絡もお気軽にどうぞ。</span>
+          </div>
         </div>
       </div>
-      <div class="flow-item">
-        <div class="flow-num">3</div>
-        <div class="flow-body">
-          <h3>ケアプランの作成</h3>
-          <p>ご本人・ご家族のご希望をうかがい、最適なケアプランを作成します。</p>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-letter">Q</span>
+          <span class="faq-q-text">介護保険の認定を受けていなくても利用できますか？</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span class="faq-a-letter">A</span>
+            <span class="faq-a-text">介護保険の認定がない場合でも、医療保険または自費でご利用いただけます。まずは主治医にご相談いただくか、当ステーションへお問い合わせください。</span>
+          </div>
         </div>
       </div>
-      <div class="flow-item">
-        <div class="flow-num">4</div>
-        <div class="flow-body">
-          <h3>訪問看護スタート</h3>
-          <p>専門の看護師がご自宅へお伺いし、訪問看護を開始します。いつでもご相談ください。</p>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-letter">Q</span>
+          <span class="faq-q-text">どんなサービスをしてもらえるのでしょうか？</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span class="faq-a-letter">A</span>
+            <span class="faq-a-text">健康観察・バイタルチェック、医療処置（点滴・創傷ケアなど）、身体ケア（入浴・清拭など）、服薬管理、認知症ケア、ターミナルケア、リハビリ支援など幅広く対応しております。ご利用者様のニーズに合わせてプランを調整いたします。</span>
+          </div>
         </div>
       </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-letter">Q</span>
+          <span class="faq-q-text">利用を始めるにはどうすればよいですか？</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span class="faq-a-letter">A</span>
+            <span class="faq-a-text">まずはお電話またはメールにてご連絡ください。担当者が丁寧にご説明いたします。主治医の指示書が必要になりますが、手続きのご案内もいたしますのでご安心ください。無料相談も随時受け付けております。</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-wrap">
+      <a href="#contact" class="btn-border">その他のご質問はこちら</a>
     </div>
   </div>
 </section>
 
-<!-- Fee -->
-<section class="fee" id="fee">
+<!-- ──────────────── NEWS ──────────────── -->
+<section id="news">
   <div class="inner">
-    <div class="fee-header">
-      <div class="tag">ご利用料金</div>
-      <h2 class="sec-title">料金について</h2>
+    <div class="sec-ttl">
+      <span class="en">News</span>
+      <span class="ja">訪問看護に関するお知らせや地域の健康情報を随時発信しております</span>
     </div>
-    <div class="fee-grid">
-      <div class="fee-card">
-        <h3>医療保険の場合</h3>
-        <p>かかった医療費の<strong>1〜3割</strong>の自己負担となります。詳細はお問い合わせください。</p>
-        <div class="fee-note">ご負担軽減のための「各種医療費助成制度」のご提案もさせていただきます。</div>
+
+    <div class="news-grid">
+      <div class="news-card">
+        <img class="n-img" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600&q=80&fit=crop" alt="ニュース1">
+        <div class="n-body">
+          <div class="n-date">2026.02.01</div>
+          <div class="n-title">訪問看護ステーション もりのたね、岡山市南区にて開設いたしました</div>
+        </div>
       </div>
-      <div class="fee-card">
-        <h3>保険外サービスのご希望</h3>
-        <p>医療保険が使用できない場合の見守り・受診などの付き添い・移動サービスなど、ご希望を伺い可能な範囲でご提案させていただきます。</p>
-        <div class="fee-note">まずはお気軽にご相談ください。</div>
+      <div class="news-card">
+        <img class="n-img" src="https://images.unsplash.com/photo-1511174511562-5f97f4f4e3d5?w=600&q=80&fit=crop" alt="ニュース2">
+        <div class="n-body">
+          <div class="n-date">2026.02.10</div>
+          <div class="n-title">認知症ケアの専門スタッフが在籍。ご自宅での安心サポートについてご相談ください</div>
+        </div>
       </div>
+      <div class="news-card">
+        <img class="n-img" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80&fit=crop" alt="ニュース3">
+        <div class="n-body">
+          <div class="n-date">2026.02.20</div>
+          <div class="n-title">365日・24時間対応。緊急時もお気軽にお電話いただける環境を整えております</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-wrap">
+      <a href="#" class="btn-border">お知らせ一覧へ</a>
     </div>
   </div>
 </section>
 
-<!-- Access -->
-<section class="access" id="access">
+<!-- ──────────────── ABOUT / COMPANY INFO + MAP ──────────────── -->
+<section id="about">
   <div class="inner">
-    <div class="access-header">
-      <div class="tag">アクセス</div>
-      <h2 class="sec-title">会社案内・アクセス</h2>
+    <div class="sec-ttl">
+      <span class="en">About</span>
+      <span class="ja">365日・24時間対応の訪問看護で、地域の方々の健康な生活をサポートします</span>
     </div>
-    <div class="access-grid">
-      <div class="access-info">
-        <div class="access-row">
-          <div class="access-key">事業所名</div>
-          <div class="access-val">訪問看護ステーション もりのたね</div>
-        </div>
-        <div class="access-row">
-          <div class="access-key">所在地</div>
-          <div class="access-val">〒702-8031<br>岡山市南区福富西3丁目6-13 2階</div>
-        </div>
-        <div class="access-row">
-          <div class="access-key">電話番号</div>
-          <div class="access-val"><a href="tel:0862595850" class="access-tel">086-259-5850</a></div>
-        </div>
-        <div class="access-row">
-          <div class="access-key">FAX</div>
-          <div class="access-val">086-259-5851</div>
-        </div>
-        <div class="access-row">
-          <div class="access-key">メール</div>
-          <div class="access-val"><a href="mailto:mori.1.A@moritane.com" style="color:var(--green);">mori.1.A@moritane.com</a></div>
-        </div>
-        <div class="access-row">
-          <div class="access-key">営業時間</div>
-          <div class="access-val"><strong style="color:var(--green);">365日・24時間対応</strong></div>
-        </div>
-        <div class="access-row">
-          <div class="access-key">事業所番号</div>
-          <div class="access-val">3360191906</div>
+
+    <div class="about-layout">
+      <!-- Company Summary -->
+      <div class="company-summary">
+        <h3>訪問看護ステーション もりのたね</h3>
+        <table class="company-table">
+          <tr>
+            <th>住所</th>
+            <td>
+              〒702-8031<br>
+              岡山市南区福富西3丁目6-13 2階<br>
+              <a href="https://maps.google.com/?q=岡山市南区福富西3丁目6-13" target="_blank">Google MAPで確認</a>
+            </td>
+          </tr>
+          <tr>
+            <th>電話番号</th>
+            <td>
+              <a href="tel:0862595850">086-259-5850</a>
+            </td>
+          </tr>
+          <tr>
+            <th>FAX</th>
+            <td>086-259-5851</td>
+          </tr>
+          <tr>
+            <th>メール</th>
+            <td>
+              <a href="mailto:mori.1.A@moritane.com">mori.1.A@moritane.com</a>
+            </td>
+          </tr>
+          <tr>
+            <th>営業時間</th>
+            <td>365日 24時間対応</td>
+          </tr>
+          <tr>
+            <th>事業者番号</th>
+            <td>3360191906</td>
+          </tr>
+        </table>
+
+        <p class="company-access">ご利用者様またはご家族様のご希望をきちんとヒアリングし、最良のプランをご案内いたします。費用や生活スタイルなどを考慮した、未来を見据えた在宅ケアをお任せください。</p>
+
+        <!-- SNS Placeholder -->
+        <div class="sns-list">
+          <a href="mailto:mori.1.A@moritane.com" title="メール">✉</a>
+          <a href="tel:0862595850" title="お電話">📞</a>
         </div>
       </div>
-      <div class="access-map">
+
+      <!-- Map -->
+      <div class="gmap-wrap">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3260.5!2d133.9290!3d34.6440!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z5bKQ5bGx5biC5Y2X5Yy65YKe5a-M6KKL77yT5LiB55uu77yW4oiS77yR77yT!5e0!3m2!1sja!2sjp!4v1620000000000!5m2!1sja!2sjp"
-          allowfullscreen="" loading="lazy">
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3258.4!2d133.9!3d34.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s%E5%B2%A1%E5%B1%B1%E5%B8%82%E5%8D%97%E5%8C%BA%E7%A6%8F%E5%AF%8C%E8%A5%BF3%E4%B8%81%E7%9B%AE6-13!5e0!3m2!1sja!2sjp!4v1"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="もりのたねの地図">
         </iframe>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<div class="cta-banner">
-  <h2>まずはお気軽にご相談ください</h2>
-  <p>訪問看護について、どんな小さなことでもお問い合わせください。<br>365日・24時間、専門スタッフがお応えします。</p>
-  <div class="cta-btns">
-    <a href="tel:0862595850" class="btn btn-white">086-259-5850</a>
-    <a href="mailto:mori.1.A@moritane.com" class="btn-outline-w">メールで相談する</a>
-  </div>
-</div>
+<!-- ──────────────── CONTACT FORM ──────────────── -->
+<section id="contact" style="padding:90px 0; background:var(--green-pale);">
+  <div class="inner">
+    <div class="sec-ttl">
+      <span class="en">Contact</span>
+      <span class="ja">ご質問・ご相談・お見積もりなど、お気軽にお問い合わせください</span>
+    </div>
 
-<!-- Footer -->
+    <form style="max-width:620px; margin:0 auto;" onsubmit="handleSubmit(event)">
+      <div style="display:grid; gap:16px;">
+        <div>
+          <label style="font-size:.82rem; font-weight:600; color:var(--text-s); display:block; margin-bottom:6px;">お名前 <span style="color:#e55;">*</span></label>
+          <input type="text" required placeholder="山田 花子"
+            style="width:100%; padding:12px 16px; border:1.5px solid var(--beige-d); border-radius:10px; font-family:inherit; font-size:.9rem; background:#fff; outline:none; transition:border-color .2s;"
+            onfocus="this.style.borderColor='var(--green)'"
+            onblur="this.style.borderColor='var(--beige-d)'">
+        </div>
+        <div>
+          <label style="font-size:.82rem; font-weight:600; color:var(--text-s); display:block; margin-bottom:6px;">電話番号 / メールアドレス <span style="color:#e55;">*</span></label>
+          <input type="text" required placeholder="086-000-0000 / example@mail.com"
+            style="width:100%; padding:12px 16px; border:1.5px solid var(--beige-d); border-radius:10px; font-family:inherit; font-size:.9rem; background:#fff; outline:none; transition:border-color .2s;"
+            onfocus="this.style.borderColor='var(--green)'"
+            onblur="this.style.borderColor='var(--beige-d)'">
+        </div>
+        <div>
+          <label style="font-size:.82rem; font-weight:600; color:var(--text-s); display:block; margin-bottom:6px;">お問い合わせ内容</label>
+          <textarea rows="5" placeholder="ご質問・ご相談内容をご記入ください"
+            style="width:100%; padding:12px 16px; border:1.5px solid var(--beige-d); border-radius:10px; font-family:inherit; font-size:.9rem; background:#fff; outline:none; transition:border-color .2s; resize:vertical;"
+            onfocus="this.style.borderColor='var(--green)'"
+            onblur="this.style.borderColor='var(--beige-d)'"></textarea>
+        </div>
+        <button type="submit"
+          style="background:var(--green); color:#fff; border:none; padding:14px 40px; border-radius:var(--r-btn); font-family:inherit; font-size:.9rem; font-weight:600; cursor:pointer; letter-spacing:.06em; transition:background .2s;"
+          onmouseover="this.style.background='var(--green-d)'"
+          onmouseout="this.style.background='var(--green)'">
+          送信する
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ──────────────── FOOTER ──────────────── -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
+  <div class="inner">
+    <div class="footer-top">
       <div>
         <div class="footer-logo">
-          <div class="footer-logo-mark">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8 8 4 10 6 16c1 3 4 5 6 6 2-1 5-3 6-6 2-6-2-8-6-14z"/></svg>
-          </div>
-          <span class="footer-logo-text">訪問看護ステーション もりのたね</span>
+          訪問看護ステーション もりのたね
+          <span>Mori no Tane Home Nursing Station</span>
         </div>
-        <p class="footer-desc">やさしさと誠実さで、利用者さまと地域社会に貢献します。<br>岡山市南区福富西3丁目6-13 2階</p>
+        <div class="footer-info" style="margin-top:14px;">
+          〒702-8031 岡山市南区福富西3丁目6-13 2階<br>
+          TEL: 086-259-5850 / FAX: 086-259-5851<br>
+          mori.1.A@moritane.com
+        </div>
       </div>
-      <div>
-        <div class="footer-h">サービス</div>
-        <ul class="footer-list">
-          <li><a href="#services">医療処置・服薬管理</a></li>
-          <li><a href="#services">健康状態の観察</a></li>
-          <li><a href="#services">清潔ケア・入浴支援</a></li>
-          <li><a href="#services">認知症ケア</a></li>
-          <li><a href="#services">保険外サービス</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-h">ご案内</div>
-        <ul class="footer-list">
-          <li><a href="#flow">ご利用の流れ</a></li>
-          <li><a href="#fee">料金について</a></li>
-          <li><a href="#access">アクセス</a></li>
-          <li><a href="tel:0862595850">086-259-5850</a></li>
-          <li><a href="mailto:mori.1.A@moritane.com">mori.1.A@moritane.com</a></li>
-        </ul>
-      </div>
+      <nav class="footer-nav">
+        <a href="#about-top">About</a>
+        <a href="#menu">サービス</a>
+        <a href="#staff">スタッフ</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#news">お知らせ</a>
+        <a href="#about">事業所概要</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 訪問看護ステーション もりのたね. All rights reserved.</p>
+      &copy; 2026 訪問看護ステーション もりのたね. All Rights Reserved.
     </div>
   </div>
 </footer>
 
-<!-- Float CTA -->
-<div class="float-cta">
-  <a href="tel:0862595850" class="float-tel">電話で相談する</a>
-  <a href="mailto:mori.1.A@moritane.com" class="float-mail">メールで相談する</a>
+<!-- ──────────────── FLOAT CTA ──────────────── -->
+<div id="float-cta">
+  <a href="tel:0862595850" class="float-tel">
+    <svg viewBox="0 0 27 27"><path d="M25.5,18.6c-1.8,0-3.6-.3-5.3-.8-.5-.2-1.1,0-1.5.4l-2.4,3C12.1,19,8.1,15.2,6,10.8l2.9-2.5c.4-.4.5-1,.4-1.5C8.7,5.1,8.5,3.3,8.5,1.5,8.5.7,7.8,0,7,0H1.8C1,0,0,.4,0,1.5,0,15.4,11.6,27,25.5,27c1.1,0,1.5-.9,1.5-1.8v-5.2C27,19.2,26.3,18.6,25.5,18.6z"/></svg>
+    今すぐ電話する
+  </a>
+  <a href="#contact" class="float-contact">
+    無料相談する
+  </a>
 </div>
 
+<!-- ──────────────── SCRIPTS ──────────────── -->
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 <script>
-const nav = document.getElementById('nav');
+// MV Slideshow
+const mvSwiper = new Swiper('.mv-swiper', {
+  loop: true,
+  autoplay: {
+    delay: 5500,
+    disableOnInteraction: false,
+  },
+  speed: 1200,
+  effect: 'fade',
+  fadeEffect: { crossFade: true },
+  pagination: {
+    el: '.mv-swiper .swiper-pagination',
+    clickable: true,
+  },
+});
+
+// Staff Slider
+const staffSwiper = new Swiper('.staff-swiper', {
+  loop: false,
+  slidesPerView: 1,
+  spaceBetween: 24,
+  navigation: {
+    nextEl: '.staff-next',
+    prevEl: '.staff-prev',
+  },
+  breakpoints: {
+    640:  { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+  },
+});
+
+// FAQ Accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.closest('.faq-item');
+    const a = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.display = 'none';
+    });
+
+    // Open clicked
+    if (!isOpen) {
+      item.classList.add('open');
+      a.style.display = 'block';
+    }
+  });
+});
+
+// Form submit
+function handleSubmit(e) {
+  e.preventDefault();
+  alert('お問い合わせありがとうございます。\n担当者よりご連絡いたします。');
+  e.target.reset();
+}
+
+// Header scroll shadow
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 20);
+  const h = document.getElementById('header');
+  if (window.scrollY > 10) {
+    h.style.boxShadow = '0 2px 20px rgba(0,0,0,.12)';
+  } else {
+    h.style.boxShadow = '0 2px 12px rgba(0,0,0,.06)';
+  }
 });
 </script>
+
 </body>
 </html>
