@@ -6,274 +6,464 @@
 <title>訪問看護ステーション もりのたね | 岡山市南区</title>
 <meta name="description" content="岡山市南区の訪問看護ステーション「もりのたね」。利用者さまにとって最良のケアを。365日24時間対応。TEL: 086-259-5850">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
+/* ── Reset & Base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --green:    #4a7c59;
-  --green-l:  #6aaa7a;
-  --green-d:  #345640;
-  --brown:    #7a5c3a;
-  --beige:    #f5f0e4;
-  --beige-d:  #ede5d0;
-  --cream:    #fdf9f2;
-  --text:     #3a3226;
-  --text-s:   #6e6258;
-  --white:    #ffffff;
-  --shadow:   0 4px 24px rgba(74,124,89,0.12);
-  --r:        20px;
+  --green:      #4d8c62;
+  --green-l:    #6aab7e;
+  --green-d:    #2e5c3e;
+  --green-pale: #eaf4ee;
+  --green-pale2:#f0f7f2;
+  --brown:      #8c6d4d;
+  --beige:      #f7f3ec;
+  --beige-d:    #ede7d9;
+  --cream:      #fdfaf5;
+  --text:       #2a2a2a;
+  --text-s:     #6b6b6b;
+  --white:      #ffffff;
+  --shadow-s:   0 2px 12px rgba(0,0,0,.07);
+  --shadow-m:   0 4px 24px rgba(0,0,0,.10);
+  --shadow-l:   0 8px 40px rgba(0,0,0,.12);
+  --r-btn:      30px;
+  --r-card:     18px;
+  --r-img:      14px;
 }
 html { scroll-behavior: smooth; }
-body { font-family: 'Noto Sans JP', sans-serif; background: var(--cream); color: var(--text); line-height: 1.8; }
+body {
+  font-family: 'Zen Maru Gothic', arial, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.85;
+  font-weight: 400;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; }
 
-/* ─ SVG organic decorations ─ */
-.deco { position: absolute; opacity: .12; pointer-events: none; }
+/* ── Utilities ── */
+.inner { max-width: 1080px; margin: 0 auto; padding: 0 5%; }
+.tag {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--green);
+  background: var(--green-pale);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.sec-title {
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  font-weight: 700;
+  color: var(--green-d);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.sec-lead { color: var(--text-s); font-size: .92rem; line-height: 1.9; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 32px;
+  border-radius: var(--r-btn);
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .25s;
+  border: 2px solid transparent;
+}
+.btn-primary { background: var(--green); color: var(--white); box-shadow: 0 4px 14px rgba(77,140,98,.35); }
+.btn-primary:hover { background: var(--green-d); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(77,140,98,.4); }
+.btn-outline { background: var(--white); color: var(--green); border-color: var(--green); }
+.btn-outline:hover { background: var(--green-pale); transform: translateY(-2px); }
+.btn-white { background: var(--white); color: var(--green-d); box-shadow: 0 4px 14px rgba(0,0,0,.15); }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.2); }
 
-/* ─ Nav ─ */
+/* ── Wave divider ── */
+.wave-top svg { display: block; margin-top: -1px; }
+.wave-bot svg { display: block; margin-bottom: -1px; }
+
+/* ── Nav ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  background: rgba(253,249,242,0.96); backdrop-filter: blur(8px);
+  height: 64px;
+  background: rgba(253,250,245,.96);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--beige-d);
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 6%; height: 66px;
+  padding: 0 5%;
+  transition: box-shadow .3s;
 }
-.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.nav-logo-icon { width: 36px; height: 36px; }
-.nav-logo-text { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 600; color: var(--green-d); line-height: 1.3; }
-.nav-logo-sub { font-size: 0.68rem; color: var(--text-s); display: block; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; }
-.nav-links { display: flex; gap: 28px; list-style: none; }
-.nav-links a { text-decoration: none; color: var(--text-s); font-size: 0.85rem; font-weight: 500; transition: color .2s; }
-.nav-links a:hover { color: var(--green); }
-.nav-tel { font-size: 1.05rem; font-weight: 700; color: var(--green-d); text-decoration: none; display: flex; align-items: center; gap: 6px; }
-.nav-tel span { font-size: 0.75rem; font-weight: 400; color: var(--text-s); }
+nav.scrolled { box-shadow: var(--shadow-s); }
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo-mark {
+  width: 38px; height: 38px;
+  background: var(--green);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.nav-logo-mark svg { width: 22px; height: 22px; fill: white; }
+.nav-logo-txt { line-height: 1.25; }
+.nav-logo-main { font-size: .95rem; font-weight: 700; color: var(--green-d); }
+.nav-logo-sub { font-size: .65rem; color: var(--text-s); font-weight: 400; }
+.nav-menu { display: flex; align-items: center; gap: 24px; }
+.nav-menu a { font-size: .82rem; font-weight: 500; color: var(--text-s); transition: color .2s; }
+.nav-menu a:hover { color: var(--green); }
+.nav-tel-wrap { display: flex; flex-direction: column; align-items: flex-end; }
+.nav-tel-num { font-family: 'Poppins', sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--green-d); letter-spacing: .02em; }
+.nav-tel-label { font-size: .6rem; color: var(--text-s); text-align: right; }
 
-/* ─ Hero ─ */
+/* ── Hero ── */
 .hero {
-  min-height: 100vh; padding-top: 66px;
-  background: linear-gradient(160deg, #eef5e8 0%, #f5f0e4 55%, #fdf6e4 100%);
-  position: relative; overflow: hidden;
+  padding-top: 64px;
+  min-height: 100vh;
+  background: var(--beige);
+  position: relative;
+  overflow: hidden;
   display: flex; align-items: center;
 }
-.hero-inner { max-width: 1140px; margin: 0 auto; padding: 60px 6%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.hero-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(74,124,89,.12); color: var(--green-d); padding: 5px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; margin-bottom: 20px; }
-.hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.7rem, 3.5vw, 2.6rem); font-weight: 600; line-height: 1.5; margin-bottom: 16px; color: var(--green-d); }
-.hero-tagline { font-size: 1rem; color: var(--text-s); margin-bottom: 8px; line-height: 1.9; }
-.hero-sub { font-size: 0.88rem; color: var(--text-s); line-height: 1.9; margin-bottom: 36px; }
-.btn-main { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: white; padding: 14px 32px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: .95rem; box-shadow: 0 4px 16px rgba(74,124,89,.3); transition: all .2s; }
-.btn-main:hover { background: var(--green-d); transform: translateY(-2px); }
-.btn-sub { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--green); padding: 14px 28px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: .88rem; border: 2px solid var(--green); transition: all .2s; margin-left: 12px; }
-.btn-sub:hover { background: var(--beige); transform: translateY(-2px); }
-.hero-img-wrap { position: relative; }
-.hero-img-main { width: 100%; border-radius: var(--r); overflow: hidden; box-shadow: 0 16px 48px rgba(74,124,89,.18); }
-.hero-img-main img { width: 100%; height: 360px; object-fit: cover; display: block; }
-.hero-badge-float { position: absolute; bottom: -20px; left: 20px; background: white; border-radius: 16px; padding: 16px 22px; box-shadow: var(--shadow); display: flex; align-items: center; gap: 12px; }
-.hero-badge-num { font-size: 1.6rem; font-weight: 700; color: var(--green); line-height: 1; }
-.hero-badge-label { font-size: 0.75rem; color: var(--text-s); }
+.hero-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--green-pale);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1080px; margin: 0 auto; padding: 64px 5%;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+}
+.hero-copy { position: relative; z-index: 1; }
+.hero-sub-copy { font-size: .88rem; color: var(--green); font-weight: 500; margin-bottom: 16px; letter-spacing: .04em; }
+.hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.7rem); font-weight: 700; color: var(--green-d); line-height: 1.5; margin-bottom: 20px; }
+.hero-tagline { font-size: .95rem; color: var(--text-s); line-height: 1.95; margin-bottom: 36px; }
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-img-col { position: relative; z-index: 1; }
+.hero-img-main { border-radius: var(--r-card); overflow: hidden; box-shadow: var(--shadow-l); }
+.hero-img-main img { height: 400px; object-fit: cover; }
+.hero-stat-bar {
+  position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%);
+  background: var(--white); border-radius: 14px;
+  padding: 14px 24px; box-shadow: var(--shadow-m);
+  display: flex; align-items: center; gap: 20px; white-space: nowrap;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num { font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 600; color: var(--green); line-height: 1; }
+.hero-stat-label { font-size: .68rem; color: var(--text-s); margin-top: 2px; }
+.hero-stat-div { width: 1px; height: 36px; background: var(--beige-d); }
 
-/* ─ Section commons ─ */
-section { padding: 88px 6%; }
-.sec-inner { max-width: 1140px; margin: 0 auto; }
-.sec-tag { display: inline-block; background: rgba(74,124,89,.1); color: var(--green-d); padding: 4px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 10px; }
-.sec-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 600; color: var(--green-d); margin-bottom: 12px; }
-.sec-lead { color: var(--text-s); font-size: .9rem; line-height: 1.9; max-width: 560px; }
-.divider { text-align: center; margin: 0 0 56px; }
-.divider-line { display: inline-flex; align-items: center; gap: 12px; color: var(--green-l); font-size: 1.2rem; }
-.divider-line::before, .divider-line::after { content: ''; display: block; width: 40px; height: 2px; background: var(--green-l); border-radius: 2px; }
+/* ── About ── */
+.about { padding: 96px 0; background: var(--cream); }
+.about-inner { max-width: 1080px; margin: 0 auto; padding: 0 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.about-img { border-radius: var(--r-card); overflow: hidden; box-shadow: var(--shadow-m); }
+.about-img img { height: 400px; object-fit: cover; }
+.about-text { }
+.about-quote {
+  border-left: 4px solid var(--green-l);
+  padding: 16px 18px;
+  background: var(--green-pale2);
+  border-radius: 0 12px 12px 0;
+  margin: 22px 0;
+  font-size: .95rem;
+  color: var(--green-d);
+  font-weight: 500;
+  line-height: 1.9;
+}
+.about-text p { font-size: .9rem; color: var(--text-s); line-height: 1.95; margin-bottom: 14px; }
 
-/* ─ Concept ─ */
-.concept { background: var(--beige); position: relative; overflow: hidden; }
-.concept-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 48px; }
-.concept-img { border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow); }
-.concept-img img { width: 100%; height: 380px; object-fit: cover; display: block; }
-.concept-text p { color: var(--text-s); font-size: .92rem; line-height: 2; margin-bottom: 18px; }
-.concept-quote { border-left: 4px solid var(--green-l); padding: 16px 20px; background: rgba(74,124,89,.07); border-radius: 0 12px 12px 0; margin: 24px 0; font-family: 'Noto Serif JP', serif; font-size: 1rem; color: var(--green-d); line-height: 1.8; }
-
-/* ─ Services ─ */
-.services { background: var(--cream); }
-.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; }
-.service-card { background: white; border-radius: var(--r); overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,.06); transition: transform .3s, box-shadow .3s; }
-.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
-.service-img { height: 160px; overflow: hidden; }
-.service-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+/* ── Services ── */
+.services { padding: 96px 0; background: var(--beige); }
+.services-header { text-align: center; margin-bottom: 52px; }
+.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.service-card {
+  background: var(--white); border-radius: var(--r-card);
+  overflow: hidden; box-shadow: var(--shadow-s);
+  transition: transform .3s, box-shadow .3s;
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-m); }
+.service-img { height: 170px; overflow: hidden; }
+.service-img img { height: 100%; object-fit: cover; transition: transform .4s; }
 .service-card:hover .service-img img { transform: scale(1.06); }
 .service-body { padding: 22px; }
-.service-icon { font-size: 1.5rem; margin-bottom: 10px; }
-.service-body h3 { font-size: .95rem; font-weight: 700; color: var(--green-d); margin-bottom: 8px; }
-.service-body p { font-size: .82rem; color: var(--text-s); line-height: 1.7; }
+.service-label {
+  display: inline-block; font-size: .68rem; font-weight: 700;
+  color: var(--green); background: var(--green-pale);
+  padding: 2px 10px; border-radius: 10px; margin-bottom: 8px;
+}
+.service-body h3 { font-size: .92rem; font-weight: 700; color: var(--green-d); margin-bottom: 8px; }
+.service-body p { font-size: .82rem; color: var(--text-s); line-height: 1.75; }
 
-/* ─ Flow ─ */
-.flow { background: var(--beige); }
-.flow-list { max-width: 680px; margin: 52px auto 0; }
-.flow-item { display: flex; gap: 20px; margin-bottom: 32px; position: relative; }
-.flow-item:not(:last-child)::after { content: ''; position: absolute; left: 22px; top: 52px; bottom: -16px; width: 2px; background: var(--green-l); opacity: .4; border-radius: 2px; }
-.flow-num { width: 46px; height: 46px; border-radius: 50%; background: var(--green); color: white; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(74,124,89,.3); }
-.flow-content { padding-top: 6px; flex: 1; }
-.flow-content h3 { font-weight: 700; font-size: .95rem; color: var(--green-d); margin-bottom: 6px; }
-.flow-content p { font-size: .85rem; color: var(--text-s); line-height: 1.7; }
+/* ── Features ── */
+.features { padding: 96px 0; background: var(--cream); }
+.features-header { text-align: center; margin-bottom: 52px; }
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.feature-card {
+  background: var(--white); border-radius: var(--r-card);
+  padding: 32px 26px; border: 2px solid var(--beige-d);
+  transition: border-color .25s, box-shadow .25s, transform .25s;
+}
+.feature-card:hover { border-color: var(--green-l); box-shadow: var(--shadow-s); transform: translateY(-4px); }
+.feature-num {
+  font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 600;
+  color: var(--green-pale); line-height: 1; margin-bottom: 12px;
+}
+.feature-card h3 { font-size: .92rem; font-weight: 700; color: var(--green-d); margin-bottom: 10px; }
+.feature-card p { font-size: .82rem; color: var(--text-s); line-height: 1.75; }
 
-/* ─ Fee ─ */
-.fee { background: var(--cream); }
-.fee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 52px; }
-.fee-card { border-radius: var(--r); padding: 32px; border: 2px solid var(--beige-d); background: white; }
-.fee-card h3 { font-size: 1rem; font-weight: 700; color: var(--green-d); margin-bottom: 14px; padding-bottom: 12px; border-bottom: 2px solid var(--beige-d); display: flex; align-items: center; gap: 8px; }
-.fee-card p { font-size: .88rem; color: var(--text-s); line-height: 1.8; }
-.fee-note { background: rgba(74,124,89,.07); border-radius: 10px; padding: 12px 14px; font-size: .82rem; color: var(--green-d); margin-top: 12px; }
+/* ── Flow ── */
+.flow { padding: 96px 0; background: var(--beige); }
+.flow-header { text-align: center; margin-bottom: 52px; }
+.flow-list { max-width: 640px; margin: 0 auto; }
+.flow-item { display: flex; gap: 20px; margin-bottom: 0; position: relative; padding-bottom: 32px; }
+.flow-item:last-child { padding-bottom: 0; }
+.flow-item:not(:last-child)::after {
+  content: '';
+  position: absolute; left: 21px; top: 48px; bottom: 0;
+  width: 2px; background: var(--beige-d); border-radius: 2px;
+}
+.flow-num {
+  width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+  background: var(--green); color: var(--white);
+  font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 12px rgba(77,140,98,.3);
+  position: relative; z-index: 1;
+}
+.flow-body { padding-top: 8px; }
+.flow-body h3 { font-size: .92rem; font-weight: 700; color: var(--green-d); margin-bottom: 6px; }
+.flow-body p { font-size: .85rem; color: var(--text-s); line-height: 1.8; }
 
-/* ─ Info ─ */
-.info { background: var(--beige); }
-.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 52px; align-items: start; }
-.info-table { background: white; border-radius: var(--r); overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,.05); }
-.info-row { display: grid; grid-template-columns: 130px 1fr; border-bottom: 1px solid var(--beige); }
-.info-row:last-child { border-bottom: none; }
-.info-key { background: rgba(74,124,89,.08); color: var(--green-d); font-size: .82rem; font-weight: 700; padding: 16px 18px; display: flex; align-items: center; }
-.info-val { padding: 16px 18px; font-size: .88rem; color: var(--text); line-height: 1.7; }
-.info-tel-big { font-size: 1.4rem; font-weight: 700; color: var(--green); }
-.map-wrap { border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow); }
-.map-wrap iframe { width: 100%; height: 320px; border: none; display: block; }
+/* ── Fee ── */
+.fee { padding: 96px 0; background: var(--cream); }
+.fee-header { text-align: center; margin-bottom: 52px; }
+.fee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.fee-card {
+  background: var(--white); border-radius: var(--r-card);
+  padding: 32px; border: 2px solid var(--beige-d);
+}
+.fee-card h3 {
+  font-size: 1rem; font-weight: 700; color: var(--green-d);
+  margin-bottom: 16px; padding-bottom: 14px;
+  border-bottom: 2px solid var(--beige-d);
+}
+.fee-card p { font-size: .88rem; color: var(--text-s); line-height: 1.85; }
+.fee-note {
+  margin-top: 14px; background: var(--green-pale2);
+  border-radius: 10px; padding: 12px 14px;
+  font-size: .8rem; color: var(--green-d); line-height: 1.7;
+}
 
-/* ─ CTA ─ */
-.cta { background: linear-gradient(135deg, var(--green-d) 0%, var(--green) 100%); padding: 72px 6%; text-align: center; position: relative; overflow: hidden; }
-.cta h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 600; color: white; margin-bottom: 12px; }
-.cta p { color: rgba(255,255,255,.85); font-size: .92rem; margin-bottom: 36px; line-height: 1.8; }
-.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.btn-white { background: white; color: var(--green-d); padding: 14px 36px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: .95rem; box-shadow: 0 4px 16px rgba(0,0,0,.15); transition: all .2s; }
-.btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,.2); }
-.btn-outline-w { background: transparent; color: white; padding: 14px 32px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: .95rem; border: 2px solid rgba(255,255,255,.7); transition: all .2s; }
-.btn-outline-w:hover { background: rgba(255,255,255,.1); transform: translateY(-2px); }
+/* ── Access ── */
+.access { padding: 96px 0; background: var(--beige); }
+.access-header { text-align: center; margin-bottom: 52px; }
+.access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.access-info { background: var(--white); border-radius: var(--r-card); overflow: hidden; box-shadow: var(--shadow-s); }
+.access-row {
+  display: grid; grid-template-columns: 110px 1fr;
+  border-bottom: 1px solid var(--beige);
+}
+.access-row:last-child { border-bottom: none; }
+.access-key {
+  background: var(--green-pale2); color: var(--green-d);
+  font-size: .78rem; font-weight: 700;
+  padding: 16px 14px; display: flex; align-items: center;
+}
+.access-val { padding: 16px 16px; font-size: .88rem; color: var(--text); line-height: 1.7; }
+.access-tel { font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--green); }
+.access-map { border-radius: var(--r-card); overflow: hidden; box-shadow: var(--shadow-m); }
+.access-map iframe { width: 100%; height: 340px; border: none; display: block; }
 
-/* ─ Footer ─ */
-footer { background: #2a3d2e; color: rgba(255,255,255,.65); padding: 52px 6% 28px; }
-.footer-inner { max-width: 1140px; margin: 0 auto; }
-.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
-.footer-logo-text { font-family: 'Noto Serif JP', serif; font-size: 1.05rem; font-weight: 600; color: white; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+/* ── CTA Banner ── */
+.cta-banner {
+  padding: 80px 5%;
+  background: linear-gradient(135deg, var(--green-d) 0%, var(--green) 100%);
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute; top: -80px; right: -80px;
+  width: 320px; height: 320px; border-radius: 50%;
+  background: rgba(255,255,255,.06);
+}
+.cta-banner h2 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 700; color: var(--white); margin-bottom: 12px; }
+.cta-banner p { color: rgba(255,255,255,.85); font-size: .9rem; line-height: 1.9; margin-bottom: 36px; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-outline-w { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.7); border-radius: var(--r-btn); padding: 13px 30px; font-family: 'Zen Maru Gothic', sans-serif; font-size: .88rem; font-weight: 700; transition: all .25s; }
+.btn-outline-w:hover { background: rgba(255,255,255,.12); transform: translateY(-2px); }
+
+/* ── Footer ── */
+footer { background: #1e3028; color: rgba(255,255,255,.65); padding: 56px 5% 28px; }
+.footer-inner { max-width: 1080px; margin: 0 auto; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+.footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.footer-logo-mark { width: 32px; height: 32px; background: var(--green-l); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.footer-logo-mark svg { width: 18px; height: 18px; fill: white; }
+.footer-logo-text { font-size: .95rem; font-weight: 700; color: var(--white); }
 .footer-desc { font-size: .82rem; line-height: 1.8; }
-.footer-h { color: white; font-size: .85rem; font-weight: 700; margin-bottom: 14px; }
+.footer-h { color: var(--white); font-size: .82rem; font-weight: 700; margin-bottom: 14px; letter-spacing: .04em; }
 .footer-list { list-style: none; }
 .footer-list li { margin-bottom: 10px; }
-.footer-list a { color: rgba(255,255,255,.6); text-decoration: none; font-size: .82rem; transition: color .2s; }
+.footer-list a { font-size: .8rem; color: rgba(255,255,255,.55); transition: color .2s; }
 .footer-list a:hover { color: var(--green-l); }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; text-align: center; font-size: .75rem; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; text-align: center; font-size: .72rem; color: rgba(255,255,255,.4); }
 
-/* ─ Float ─ */
-.float-wrap { position: fixed; bottom: 20px; right: 20px; z-index: 300; display: flex; flex-direction: column; gap: 10px; }
-.float-btn { display: flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 28px; font-weight: 700; font-size: .85rem; text-decoration: none; box-shadow: 0 4px 16px rgba(0,0,0,.18); transition: all .2s; }
-.float-btn:hover { transform: translateY(-2px); }
-.f-tel { background: var(--brown); color: white; }
-.f-mail { background: var(--green); color: white; }
+/* ── Float ── */
+.float-cta {
+  position: fixed; bottom: 20px; right: 20px; z-index: 300;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.float-tel {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--brown); color: var(--white);
+  padding: 11px 20px; border-radius: 28px;
+  font-weight: 700; font-size: .83rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,.2);
+  transition: all .2s;
+}
+.float-tel:hover { transform: translateY(-2px); }
+.float-mail {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--green); color: var(--white);
+  padding: 11px 20px; border-radius: 28px;
+  font-weight: 700; font-size: .83rem;
+  box-shadow: 0 4px 16px rgba(77,140,98,.3);
+  transition: all .2s;
+}
+.float-mail:hover { transform: translateY(-2px); }
 
-/* ─ Responsive ─ */
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-img-wrap { display: none; }
-  .concept-grid, .info-grid, .fee-grid { grid-template-columns: 1fr; }
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .nav-menu { display: none; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 48px 5%; }
+  .hero-img-col { display: none; }
+  .about-inner { grid-template-columns: 1fr; gap: 36px; }
   .service-grid { grid-template-columns: 1fr 1fr; }
-  .footer-top { grid-template-columns: 1fr; gap: 28px; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+  .fee-grid { grid-template-columns: 1fr; }
+  .access-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 }
 @media (max-width: 520px) {
-  .service-grid { grid-template-columns: 1fr; }
+  .service-grid, .features-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 1.7rem; }
+  .hero-btns { flex-direction: column; }
 }
 </style>
 </head>
 <body>
 
 <!-- Nav -->
-<nav>
+<nav id="nav">
   <a href="#" class="nav-logo">
-    <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none">
-      <circle cx="18" cy="18" r="18" fill="#4a7c59" opacity=".12"/>
-      <path d="M18 28 C14 22 8 18 10 12 C12 6 18 8 18 14 C18 8 24 6 26 12 C28 18 22 22 18 28Z" fill="#4a7c59"/>
-      <circle cx="18" cy="29" r="2" fill="#7a5c3a"/>
-    </svg>
-    <span class="nav-logo-text">もりのたね<span class="nav-logo-sub">訪問看護ステーション</span></span>
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8 8 4 10 6 16c1 3 4 5 6 6 2-1 5-3 6-6 2-6-2-8-6-14z"/></svg>
+    </div>
+    <div class="nav-logo-txt">
+      <div class="nav-logo-main">もりのたね</div>
+      <div class="nav-logo-sub">訪問看護ステーション</div>
+    </div>
   </a>
-  <ul class="nav-links">
-    <li><a href="#concept">私たちについて</a></li>
-    <li><a href="#services">サービス</a></li>
-    <li><a href="#flow">ご利用の流れ</a></li>
-    <li><a href="#fee">料金</a></li>
-    <li><a href="#info">アクセス</a></li>
-  </ul>
-  <a href="tel:0862595850" class="nav-tel">☎ 086-259-5850<span>24時間受付</span></a>
+  <nav class="nav-menu">
+    <a href="#about">私たちについて</a>
+    <a href="#services">サービス</a>
+    <a href="#flow">ご利用の流れ</a>
+    <a href="#fee">料金</a>
+    <a href="#access">アクセス</a>
+  </nav>
+  <div class="nav-tel-wrap">
+    <a href="tel:0862595850" class="nav-tel-num">086-259-5850</a>
+    <span class="nav-tel-label">24時間・365日受付</span>
+  </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
-  <!-- 背景デコ -->
-  <svg class="deco" style="top:-60px;right:-60px;width:400px;" viewBox="0 0 400 400"><circle cx="200" cy="200" r="200" fill="#4a7c59"/></svg>
-  <svg class="deco" style="bottom:-80px;left:-40px;width:300px;" viewBox="0 0 300 300"><circle cx="150" cy="150" r="150" fill="#7a5c3a"/></svg>
+  <div class="hero-bg-circle" style="width:600px;height:600px;top:-200px;right:-150px;opacity:.5;"></div>
+  <div class="hero-bg-circle" style="width:300px;height:300px;bottom:-100px;left:-80px;opacity:.4;"></div>
 
   <div class="hero-inner">
-    <div>
-      <div class="hero-tag">🌿 岡山市南区の訪問看護</div>
+    <div class="hero-copy">
+      <div class="tag">岡山市南区の訪問看護</div>
       <h1>やさしさと誠実さで、<br>あなたの暮らしに<br>寄り添います。</h1>
-      <p class="hero-tagline">利用者さまにとって最良のケアを<br>スタッフにとって最良の環境を</p>
-      <p class="hero-sub">住み慣れたご自宅で、安心して暮らし続けられるよう<br>専門の看護師がしっかりとサポートします。<br>365日・24時間、いつでもお気軽にご連絡ください。</p>
-      <div>
-        <a href="tel:0862595850" class="btn-main">📞 今すぐ電話する</a>
-        <a href="#flow" class="btn-sub">ご利用の流れ</a>
+      <p class="hero-tagline">
+        住み慣れたご自宅で、安心して暮らし続けられるよう<br>
+        専門の看護師がしっかりとサポートします。<br>
+        365日・24時間、いつでもお気軽にご連絡ください。
+      </p>
+      <div class="hero-btns">
+        <a href="tel:0862595850" class="btn btn-primary">今すぐ電話する</a>
+        <a href="#flow" class="btn btn-outline">ご利用の流れを見る</a>
       </div>
     </div>
-    <div class="hero-img-wrap">
+
+    <div class="hero-img-col">
       <div class="hero-img-main">
         <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=80" alt="看護師が自宅でケアをしている様子">
       </div>
-      <div class="hero-badge-float">
-        <div>
-          <div class="hero-badge-num">365</div>
-          <div class="hero-badge-label">日</div>
+      <div class="hero-stat-bar">
+        <div class="hero-stat">
+          <div class="hero-stat-num">365</div>
+          <div class="hero-stat-label">日対応</div>
         </div>
-        <div style="width:1px;height:36px;background:#e0d8cc;"></div>
-        <div>
-          <div class="hero-badge-num">24</div>
-          <div class="hero-badge-label">時間対応</div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">24h</div>
+          <div class="hero-stat-label">受付</div>
         </div>
-        <div style="width:1px;height:36px;background:#e0d8cc;"></div>
-        <div>
-          <div style="font-size:.75rem;color:var(--text-s);">事業所番号</div>
-          <div style="font-size:.85rem;font-weight:700;color:var(--green-d);">3360191906</div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" style="font-size:1rem;">3360191906</div>
+          <div class="hero-stat-label">事業所番号</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Concept -->
-<section class="concept" id="concept">
-  <div class="sec-inner">
-    <div class="sec-tag">🌱 私たちについて</div>
-    <h2 class="sec-title">もりのたねについて</h2>
-    <div class="concept-grid">
-      <div class="concept-img">
-        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=700&q=80" alt="温かいケアの様子">
+<!-- About -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=700&q=80" alt="温かいケアの様子">
+    </div>
+    <div class="about-text">
+      <div class="tag">私たちについて</div>
+      <h2 class="sec-title">もりのたねについて</h2>
+      <div class="about-quote">
+        利用者さまにとって最良のケアを<br>
+        スタッフにとって最良の環境を<br>
+        やさしさと誠実さで、社会に貢献します
       </div>
-      <div class="concept-text">
-        <div class="concept-quote">
-          利用者さまにとって最良のケアを<br>
-          スタッフにとって最良の環境を<br>
-          やさしさと誠実さで、社会に貢献します
-        </div>
-        <p>訪問看護ステーション「もりのたね」は、岡山市南区を拠点に、住み慣れたご自宅での療養生活を支える訪問看護サービスを提供しています。</p>
-        <p>「もりのたね（森の種）」という名前には、小さな種が大きな木へと成長するように、一つひとつの丁寧なケアで、利用者さまの生活の質を高めていきたいという想いが込められています。</p>
-        <p>医療処置から日常生活のサポートまで、専門の看護師がご自宅へお伺いし、ご本人・ご家族の安心を支えます。</p>
-      </div>
+      <p>訪問看護ステーション「もりのたね」は、岡山市南区を拠点に、住み慣れたご自宅での療養生活を支えるサービスを提供しています。</p>
+      <p>「もりのたね（森の種）」という名前には、小さな種が大きな木へと成長するように、一つひとつの丁寧なケアで利用者さまの生活の質を高めていきたいという想いが込められています。</p>
+      <p>医療処置から日常生活のサポートまで、専門の看護師がご自宅へお伺いします。</p>
     </div>
   </div>
 </section>
 
 <!-- Services -->
 <section class="services" id="services">
-  <div class="sec-inner">
-    <div class="sec-tag">🩺 サービス内容</div>
-    <h2 class="sec-title">提供しているサービス</h2>
-    <p class="sec-lead">医療的なケアから日常生活のサポートまで、幅広くご支援します。</p>
+  <div class="inner">
+    <div class="services-header">
+      <div class="tag">サービス内容</div>
+      <h2 class="sec-title">提供しているサービス</h2>
+      <p class="sec-lead">医療的なケアから日常生活のサポートまで、幅広くご支援します。</p>
+    </div>
     <div class="service-grid">
       <div class="service-card">
         <div class="service-img">
           <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=500&q=80" alt="医療処置">
         </div>
         <div class="service-body">
-          <div class="service-icon">💊</div>
+          <div class="service-label">Medical</div>
           <h3>医療処置・服薬管理</h3>
           <p>点滴・注射・創傷処置・カテーテル管理など、専門的な医療処置を安全に行います。</p>
         </div>
@@ -283,7 +473,7 @@ footer { background: #2a3d2e; color: rgba(255,255,255,.65); padding: 52px 6% 28p
           <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=500&q=80" alt="健康管理">
         </div>
         <div class="service-body">
-          <div class="service-icon">🫀</div>
+          <div class="service-label">Health</div>
           <h3>健康状態の観察・管理</h3>
           <p>バイタルサイン測定・身体状況の変化を定期的に観察し、主治医へ報告・連携します。</p>
         </div>
@@ -293,7 +483,7 @@ footer { background: #2a3d2e; color: rgba(255,255,255,.65); padding: 52px 6% 28p
           <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80" alt="清潔ケア">
         </div>
         <div class="service-body">
-          <div class="service-icon">🛁</div>
+          <div class="service-label">Care</div>
           <h3>清潔ケア・入浴支援</h3>
           <p>全身清拭・入浴介助・口腔ケアなど、清潔を保ちながら感染予防にも配慮します。</p>
         </div>
@@ -303,7 +493,7 @@ footer { background: #2a3d2e; color: rgba(255,255,255,.65); padding: 52px 6% 28p
           <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=500&q=80" alt="認知症ケア">
         </div>
         <div class="service-body">
-          <div class="service-icon">🧠</div>
+          <div class="service-label">Dementia</div>
           <h3>認知症ケア</h3>
           <p>認知症の方が安心して在宅生活を続けられるよう、専門的なケアでサポートします。</p>
         </div>
@@ -313,7 +503,7 @@ footer { background: #2a3d2e; color: rgba(255,255,255,.65); padding: 52px 6% 28p
           <img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=500&q=80" alt="付き添い">
         </div>
         <div class="service-body">
-          <div class="service-icon">🚗</div>
+          <div class="service-label">Support</div>
           <h3>受診付き添い・移動支援</h3>
           <p>病院への受診付き添いや移動のサポートなど、保険外サービスも柔軟にご相談ください。</p>
         </div>
@@ -323,7 +513,7 @@ footer { background: #2a3d2e; color: rgba(255,255,255,.65); padding: 52px 6% 28p
           <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80" alt="家族支援">
         </div>
         <div class="service-body">
-          <div class="service-icon">👨‍👩‍👧</div>
+          <div class="service-label">Family</div>
           <h3>ご家族へのサポート</h3>
           <p>介護方法のアドバイスや精神的なサポートなど、ご家族も含めたトータルケアを行います。</p>
         </div>
@@ -332,37 +522,81 @@ footer { background: #2a3d2e; color: rgba(255,255,255,.65); padding: 52px 6% 28p
   </div>
 </section>
 
+<!-- Features -->
+<section class="features" id="features">
+  <div class="inner">
+    <div class="features-header">
+      <div class="tag">選ばれる理由</div>
+      <h2 class="sec-title">もりのたねが選ばれる理由</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <h3>24時間365日対応</h3>
+        <p>夜間・休日・緊急時も関係なく、専門の看護師がすぐにご自宅へ駆けつけます。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <h3>経験豊富な看護師</h3>
+        <p>病院での臨床経験を持つ看護師が在籍。専門知識で安心のサービスを提供します。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <h3>オーダーメイドケア</h3>
+        <p>お一人おひとりの状態・生活環境・ご希望に合わせたケアプランをご提案します。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">04</div>
+        <h3>多職種との連携</h3>
+        <p>主治医・ケアマネジャー・リハビリスタッフと密に連携し、チームでケアします。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">05</div>
+        <h3>在宅移行サポート</h3>
+        <p>入院中から退院後の生活を見据えて計画。スムーズな在宅生活の開始を支援します。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">06</div>
+        <h3>家族への丁寧な説明</h3>
+        <p>ご本人だけでなくご家族の不安も解消。定期報告といつでも相談できる体制を整えています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Flow -->
 <section class="flow" id="flow">
-  <div class="sec-inner">
-    <div style="text-align:center;margin-bottom:8px;"><div class="sec-tag">📋 ご利用の流れ</div></div>
-    <h2 class="sec-title" style="text-align:center;">お申込みについて</h2>
-    <p class="sec-lead" style="margin:0 auto 0;text-align:center;">まずはお気軽にご連絡ください。丁寧にご説明します。</p>
+  <div class="inner">
+    <div class="flow-header">
+      <div class="tag">ご利用の流れ</div>
+      <h2 class="sec-title">お申込みについて</h2>
+      <p class="sec-lead">まずはお気軽にご連絡ください。丁寧にご説明します。</p>
+    </div>
     <div class="flow-list">
       <div class="flow-item">
         <div class="flow-num">1</div>
-        <div class="flow-content">
+        <div class="flow-body">
           <h3>まずはご連絡ください</h3>
           <p>お電話もしくはメールにてご連絡ください。どんな小さなことでもお気軽にご相談ください。</p>
         </div>
       </div>
       <div class="flow-item">
         <div class="flow-num">2</div>
-        <div class="flow-content">
+        <div class="flow-body">
           <h3>ご面談・ご説明</h3>
           <p>ご面談を行い、サービス内容やお手続きについて丁寧にご説明します。主治医・ケアマネジャーとの連携も行います。</p>
         </div>
       </div>
       <div class="flow-item">
         <div class="flow-num">3</div>
-        <div class="flow-content">
+        <div class="flow-body">
           <h3>ケアプランの作成</h3>
           <p>ご本人・ご家族のご希望をうかがい、最適なケアプランを作成します。</p>
         </div>
       </div>
       <div class="flow-item">
         <div class="flow-num">4</div>
-        <div class="flow-content">
+        <div class="flow-body">
           <h3>訪問看護スタート</h3>
           <p>専門の看護師がご自宅へお伺いし、訪問看護を開始します。いつでもご相談ください。</p>
         </div>
@@ -373,67 +607,68 @@ footer { background: #2a3d2e; color: rgba(255,255,255,.65); padding: 52px 6% 28p
 
 <!-- Fee -->
 <section class="fee" id="fee">
-  <div class="sec-inner">
-    <div class="sec-tag">💴 ご利用料金</div>
-    <h2 class="sec-title">料金について</h2>
+  <div class="inner">
+    <div class="fee-header">
+      <div class="tag">ご利用料金</div>
+      <h2 class="sec-title">料金について</h2>
+    </div>
     <div class="fee-grid">
       <div class="fee-card">
-        <h3>🏥 医療保険の場合</h3>
+        <h3>医療保険の場合</h3>
         <p>かかった医療費の<strong>1〜3割</strong>の自己負担となります。詳細はお問い合わせください。</p>
-        <div class="fee-note">💡 ご負担軽減のための「各種医療費助成制度」のご提案もさせていただきます。</div>
+        <div class="fee-note">ご負担軽減のための「各種医療費助成制度」のご提案もさせていただきます。</div>
       </div>
       <div class="fee-card">
-        <h3>🤝 保険外サービスのご希望</h3>
+        <h3>保険外サービスのご希望</h3>
         <p>医療保険が使用できない場合の見守り・受診などの付き添い・移動サービスなど、ご希望を伺い可能な範囲でご提案させていただきます。</p>
-        <div class="fee-note">💬 まずはお気軽にご相談ください。</div>
+        <div class="fee-note">まずはお気軽にご相談ください。</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Info -->
-<section class="info" id="info">
-  <div class="sec-inner">
-    <div class="sec-tag">📍 アクセス・基本情報</div>
-    <h2 class="sec-title">会社案内</h2>
-    <div class="info-grid">
-      <div>
-        <div class="info-table">
-          <div class="info-row">
-            <div class="info-key">事業所名</div>
-            <div class="info-val">訪問看護ステーション もりのたね</div>
-          </div>
-          <div class="info-row">
-            <div class="info-key">所在地</div>
-            <div class="info-val">〒702-8031<br>岡山市南区福富西3丁目6-13 2階</div>
-          </div>
-          <div class="info-row">
-            <div class="info-key">電話番号</div>
-            <div class="info-val"><a href="tel:0862595850" class="info-tel-big">086-259-5850</a></div>
-          </div>
-          <div class="info-row">
-            <div class="info-key">FAX</div>
-            <div class="info-val">086-259-5851</div>
-          </div>
-          <div class="info-row">
-            <div class="info-key">メール</div>
-            <div class="info-val"><a href="mailto:mori.1.A@moritane.com" style="color:var(--green);">mori.1.A@moritane.com</a></div>
-          </div>
-          <div class="info-row">
-            <div class="info-key">営業時間</div>
-            <div class="info-val"><strong style="color:var(--green);">365日・24時間対応</strong></div>
-          </div>
-          <div class="info-row">
-            <div class="info-key">事業所番号</div>
-            <div class="info-val">3360191906</div>
-          </div>
+<!-- Access -->
+<section class="access" id="access">
+  <div class="inner">
+    <div class="access-header">
+      <div class="tag">アクセス</div>
+      <h2 class="sec-title">会社案内・アクセス</h2>
+    </div>
+    <div class="access-grid">
+      <div class="access-info">
+        <div class="access-row">
+          <div class="access-key">事業所名</div>
+          <div class="access-val">訪問看護ステーション もりのたね</div>
+        </div>
+        <div class="access-row">
+          <div class="access-key">所在地</div>
+          <div class="access-val">〒702-8031<br>岡山市南区福富西3丁目6-13 2階</div>
+        </div>
+        <div class="access-row">
+          <div class="access-key">電話番号</div>
+          <div class="access-val"><a href="tel:0862595850" class="access-tel">086-259-5850</a></div>
+        </div>
+        <div class="access-row">
+          <div class="access-key">FAX</div>
+          <div class="access-val">086-259-5851</div>
+        </div>
+        <div class="access-row">
+          <div class="access-key">メール</div>
+          <div class="access-val"><a href="mailto:mori.1.A@moritane.com" style="color:var(--green);">mori.1.A@moritane.com</a></div>
+        </div>
+        <div class="access-row">
+          <div class="access-key">営業時間</div>
+          <div class="access-val"><strong style="color:var(--green);">365日・24時間対応</strong></div>
+        </div>
+        <div class="access-row">
+          <div class="access-key">事業所番号</div>
+          <div class="access-val">3360191906</div>
         </div>
       </div>
-      <div class="map-wrap">
+      <div class="access-map">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.0!2d133.93!3d34.64!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3554016b3b3b3b3b%3A0x0!2z5bKQ5bGx5biC5Y2X5Yy65YKe5a-M6KKL77yT5LiB55uu77yW4oiS77yR77yT!5e0!3m2!1sja!2sjp!4v1620000000000"
-          allowfullscreen=""
-          loading="lazy">
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3260.5!2d133.9290!3d34.6440!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z5bKQ5bGx5biC5Y2X5Yy65YKe5a-M6KKL77yT5LiB55uu77yW4oiS77yR77yT!5e0!3m2!1sja!2sjp!4v1620000000000!5m2!1sja!2sjp"
+          allowfullscreen="" loading="lazy">
         </iframe>
       </div>
     </div>
@@ -441,22 +676,26 @@ footer { background: #2a3d2e; color: rgba(255,255,255,.65); padding: 52px 6% 28p
 </section>
 
 <!-- CTA -->
-<section class="cta">
-  <svg class="deco" style="top:-80px;right:-80px;width:300px;opacity:.08;" viewBox="0 0 300 300"><circle cx="150" cy="150" r="150" fill="white"/></svg>
+<div class="cta-banner">
   <h2>まずはお気軽にご相談ください</h2>
   <p>訪問看護について、どんな小さなことでもお問い合わせください。<br>365日・24時間、専門スタッフがお応えします。</p>
   <div class="cta-btns">
-    <a href="tel:0862595850" class="btn-white">📞 086-259-5850</a>
-    <a href="mailto:mori.1.A@moritane.com" class="btn-outline-w">✉️ メールで相談</a>
+    <a href="tel:0862595850" class="btn btn-white">086-259-5850</a>
+    <a href="mailto:mori.1.A@moritane.com" class="btn-outline-w">メールで相談する</a>
   </div>
-</section>
+</div>
 
 <!-- Footer -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-top">
+    <div class="footer-grid">
       <div>
-        <div class="footer-logo-text">🌿 訪問看護ステーション もりのたね</div>
+        <div class="footer-logo">
+          <div class="footer-logo-mark">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8 8 4 10 6 16c1 3 4 5 6 6 2-1 5-3 6-6 2-6-2-8-6-14z"/></svg>
+          </div>
+          <span class="footer-logo-text">訪問看護ステーション もりのたね</span>
+        </div>
         <p class="footer-desc">やさしさと誠実さで、利用者さまと地域社会に貢献します。<br>岡山市南区福富西3丁目6-13 2階</p>
       </div>
       <div>
@@ -474,9 +713,9 @@ footer { background: #2a3d2e; color: rgba(255,255,255,.65); padding: 52px 6% 28p
         <ul class="footer-list">
           <li><a href="#flow">ご利用の流れ</a></li>
           <li><a href="#fee">料金について</a></li>
-          <li><a href="#info">アクセス</a></li>
-          <li><a href="tel:0862595850">📞 086-259-5850</a></li>
-          <li><a href="mailto:mori.1.A@moritane.com">✉️ メール</a></li>
+          <li><a href="#access">アクセス</a></li>
+          <li><a href="tel:0862595850">086-259-5850</a></li>
+          <li><a href="mailto:mori.1.A@moritane.com">mori.1.A@moritane.com</a></li>
         </ul>
       </div>
     </div>
@@ -486,11 +725,17 @@ footer { background: #2a3d2e; color: rgba(255,255,255,.65); padding: 52px 6% 28p
   </div>
 </footer>
 
-<!-- Float buttons -->
-<div class="float-wrap">
-  <a href="tel:0862595850" class="float-btn f-tel">📞 今すぐ電話</a>
-  <a href="mailto:mori.1.A@moritane.com" class="float-btn f-mail">✉️ メール相談</a>
+<!-- Float CTA -->
+<div class="float-cta">
+  <a href="tel:0862595850" class="float-tel">電話で相談する</a>
+  <a href="mailto:mori.1.A@moritane.com" class="float-mail">メールで相談する</a>
 </div>
 
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+</script>
 </body>
 </html>
