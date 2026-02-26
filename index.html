@@ -476,8 +476,20 @@ ul { list-style: none; }
   box-shadow: var(--shadow-m);
 }
 .service-card .icon {
-  font-size: 2.2rem;
-  margin-bottom: 14px;
+  width: 48px;
+  height: 48px;
+  background: var(--green-pale);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.service-card .icon svg {
+  width: 26px;
+  height: 26px;
+  color: var(--green);
+  stroke: var(--green);
 }
 .service-card h3 {
   font-size: 1rem;
@@ -1144,32 +1156,44 @@ footer {
     <!-- Service Cards -->
     <div class="service-grid">
       <div class="service-card">
-        <div class="icon">🩺</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.75l6 6 9-13.5"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
         <h3>健康状態の管理・観察</h3>
         <p>バイタルサインの確認、体調変化の観察、主治医への報告・連絡を行います。早期発見・早期対応で安心の在宅療養を。</p>
       </div>
       <div class="service-card">
-        <div class="icon">💊</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg>
+        </div>
         <h3>医療処置・服薬管理</h3>
         <p>点滴管理、創傷処置、カテーテルケアなど医療的処置。内服確認・管理もお任せください。</p>
       </div>
       <div class="service-card">
-        <div class="icon">🛁</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 100-18 9 9 0 000 18z"/><path d="M9 10h.01M15 10h.01M9.5 15a3.5 3.5 0 005 0"/></svg>
+        </div>
         <h3>身体ケア・生活支援</h3>
         <p>清拭・入浴介助、食事・排泄介助、ポジショニングなど日常生活のサポートを丁寧に行います。</p>
       </div>
       <div class="service-card">
-        <div class="icon">🧠</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
         <h3>認知症ケア</h3>
         <p>認知症の方が自宅でその人らしく過ごせるよう、専門的ケアを提供。ご家族様へのアドバイスも行います。</p>
       </div>
       <div class="service-card">
-        <div class="icon">🌿</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
         <h3>ターミナルケア</h3>
         <p>人生の最期まで住み慣れた自宅で過ごせるよう、本人・ご家族に寄り添った看護を提供します。</p>
       </div>
       <div class="service-card">
-        <div class="icon">💬</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 12h6M9 16h4"/></svg>
+        </div>
         <h3>リハビリテーション支援</h3>
         <p>理学療法士・作業療法士と連携した機能回復訓練。日常生活動作の維持・改善をサポートします。</p>
       </div>
@@ -1458,8 +1482,12 @@ footer {
 
         <!-- SNS Placeholder -->
         <div class="sns-list">
-          <a href="mailto:mori.1.A@moritane.com" title="メール">✉</a>
-          <a href="tel:0862595850" title="お電話">📞</a>
+          <a href="mailto:mori.1.A@moritane.com" title="メール">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="tel:0862595850" title="お電話">
+            <svg width="18" height="18" viewBox="0 0 27 27" fill="currentColor"><path d="M25.5,18.6c-1.8,0-3.6-.3-5.3-.8-.5-.2-1.1,0-1.5.4l-2.4,3C12.1,19,8.1,15.2,6,10.8l2.9-2.5c.4-.4.5-1,.4-1.5C8.7,5.1,8.5,3.3,8.5,1.5,8.5.7,7.8,0,7,0H1.8C1,0,0,.4,0,1.5,0,15.4,11.6,27,25.5,27c1.1,0,1.5-.9,1.5-1.8v-5.2C27,19.2,26.3,18.6,25.5,18.6z"/></svg>
+          </a>
         </div>
       </div>
 
